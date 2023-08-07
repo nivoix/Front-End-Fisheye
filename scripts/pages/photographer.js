@@ -6,7 +6,7 @@ let photographerId = params.get("id");
 async function getPhotographersById(photographerId) {
     let infoPhotographers = []
     let photographe = []
-    await fetch("/data/photographers.json")
+    await fetch("http://localhost:5500/data/photographers.json")
         .then(reponse => reponse.json())
         .then((data) => {
             infoPhotographers = data.photographers

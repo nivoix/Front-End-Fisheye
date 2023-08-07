@@ -1,7 +1,7 @@
     async function getPhotographers() {
         
         let dataPhotographers = []
-        await fetch("/data/photographers.json")
+        await fetch("http://localhost:5500/data/photographers.json")
                 .then(reponse => reponse.json())
                 .then((data) => {
                     dataPhotographers = data.photographers
