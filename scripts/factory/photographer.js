@@ -17,15 +17,19 @@ function photographerFactory(data) {
         //création du nom du photographe
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
+        h2.setAttribute("role", "name");
         //création de sa ville et pays
         const h3 = document.createElement( 'h3');
         h3.textContent = city+', '+ country;
+        h3.setAttribute("role", "localisation");
         // création de son slogan
         const tag = document.createElement( 'h4');
-        tag.textContent = tagline;
+        tag.textContent = "\u00ab"+ tagline +"\u00bb";
+        tag.setAttribute("role", "tag");
         // création de son tarif
         const rate = document.createElement( 'h5');
         rate.textContent = price+'€/jour';
+        rate.setAttribute("role", "rate");
         // articulation des éléments créés, les uns avec les autres
         article.appendChild(link);
         link.appendChild(img);
