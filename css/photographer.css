@@ -1,12 +1,36 @@
 #contact_modal {
     display: none;
 }
+main {
+    display: flex;
+    position: relative;
+    height: max-content;
+    flex-direction: column;
+    align-items: center;
+}
+main h5 {
+    position: absolute;
+    bottom: -78vh;
+    right: 0;
+}
 
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 0;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 7%;
+    width: 100%;
 }
+.photograph-header :nth-child(1) {order: 2;}
+.photograph-header :nth-child(2) {order: 3; width: 150px; border-radius: 50%}
+.photograph-header :nth-child(3) {order: 1;}
 
 .contact_button {
     font-size: 20px;

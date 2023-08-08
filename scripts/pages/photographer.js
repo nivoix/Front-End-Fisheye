@@ -6,21 +6,37 @@ let photographerId = params.get("id");
 async function getPhotographersById(photographerId) {
     let infoPhotographers = []
     let photographe = []
+    let photographeMedias = []
     await fetch("./data/photographers.json")
         .then(reponse => reponse.json())
         .then((data) => {
             infoPhotographers = data.photographers
             mediaPhotographers = data.media
-            console.log(infoPhotographers)
-            console.log(mediaPhotographers)
             photographe = infoPhotographers.filter((photographer) => photographer.id == photographerId)
             photographeMedias = mediaPhotographers.filter((photographer) => photographer.photographerId == photographerId)
-            console.log(photographe);           
-            console.log(photographeMedias);           
         })
         .catch((error) => error)
-        return ({photographer : [...photographe, ...photographeMedias]})
+        return ({
+            photographe : [...photographe],
+            photographeMedias: [...photographeMedias]
+        })
 }
-getPhotographersById(photographerId)
+/* getPhotographersById(photographerId) */
 
 
+async function displayData(photographe) {
+    const photographersSection = document.querySelector(".photograph-header");
+    
+    photographe.forEach((photograph) => {
+        console.log(photograph);
+        const userCardDOM = getUserCardDOM(photograph);
+        photographersSection.appendChild(userCardDOM);
+    });
+}
+async function init() {
+    // Récupère les datas des photographes
+    const  {photographe}  = await getPhotographersById(photographerId);
+    displayData(photographe);
+}
+
+init();
