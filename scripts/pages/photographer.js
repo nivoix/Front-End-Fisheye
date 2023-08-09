@@ -32,16 +32,16 @@ async function displayData(photographe, photographeMedias) {
         const userCardDOM = getHeaderPhotograph(photograph);
         photographersSection.appendChild(userCardDOM);
     });
-    const photosSection = document.createElement('section')
-    main.appendChild(photosSection);
+    const photosSection = document.querySelector('.photosSection')
     photographeMedias.forEach((media) => {
         console.log(media);
         if(media.image != undefined){
             const photoWall = getMediasPhotographe(media)
-            photosSection.appendChild(photoWall)
+            console.log(photoWall);
+            photosSection.appendChild(photoWall);
         }
 
-    })
+    });
 }
 async function init() {
     // Récupère les datas des photographes

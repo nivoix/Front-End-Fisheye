@@ -41,22 +41,31 @@ function getMediasPhotographe(data) {
     const picture = `./assets/photographers/${photographerId}/${image}`
     //création de la card
     const cardPhotos = document.createElement('article');
+    const link = document.createElement('a')
     //création de l'image
+    const cardImg = document.createElement('div')
+    cardImg.className = "cardImg"
     const img = document.createElement('img');
     img.setAttribute("src", picture);
     img.setAttribute("alt", "titre de l'image" + title);
+
     //création du titre
+    const cardText = document.createElement('div')
     const titlephoto = document.createElement('p');
     titlephoto.textContent = title;
     titlephoto.setAttribute("role", "titre de la photo")
     const nblikes = document.createElement('span')
     const iconelike = './assets/likes.png'
-    nblikes.textContent = likes + iconelike;
+    nblikes.textContent = likes + `${iconelike}`;
 
-    cardPhotos.appendChild(img)
-    cardPhotos.appendChild(titlephoto)
-    cardPhotos.appendChild(nblikes)
+    cardPhotos.appendChild(link)
 
+    link.appendChild(cardImg)
+    cardImg.appendChild(img)
+    
+    link.appendChild(cardText)
+    cardText.appendChild(titlephoto)
+    cardText.appendChild(nblikes)
 
     return (cardPhotos);
 }

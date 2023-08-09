@@ -2,8 +2,12 @@
     display: none;
 }
 main {
+    display: flex;
+    width: 100%;
     position: relative;
-    margin-inline: 100px;
+    padding-inline: 100px;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 main .photograph-header:nth-child(1){order: 1;}
 main h5:nth-child(2){order: 3;}
@@ -45,8 +49,9 @@ main h5 {
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: auto;
     margin: 0;
+    margin-right: 100px;
     display: flex;
     position: absolute;
     flex-wrap: nowrap;
@@ -54,7 +59,7 @@ main h5 {
     align-items: center;
     justify-content: space-between;
     gap: 7%;
-    width: 100%;
+    width: 92%;
 }
 .photograph-header :nth-child(1) {order: 2;}
 .photograph-header :nth-child(2) {order: 3; width: 150px; border-radius: 50%}
@@ -62,20 +67,34 @@ main h5 {
 section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    gap: 2%;
     margin-top: 100px;
+    position: absolute;
     padding-bottom: 100px;
-    justify-items: stretch;
-    align-items: center;
-    justify-content: space-around;
-    align-content: stretch;
+    right: 100px;
+    left: 100px;
+    top: 100px;
+    width: 100%;
 }
 section article {
-    width: 350px;
+    width: 82%;
     height: 350px;
+}
+section article a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.cardImg {
+    width: 100%;
+    height: 90%;
 }
 section article img {
     object-fit: cover;
+    width: 100%;
+    height: 300px;
 }
 
 .contact_button {
