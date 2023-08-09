@@ -1,6 +1,7 @@
 // récupération de l'id du photographe sélectionné passé dans l'URL 
 let params = new URL(document.location).searchParams;
 let photographerId = params.get("id");
+const main = document.querySelector('main')
 
 
 async function getPhotographersById(photographerId) {
@@ -24,19 +25,29 @@ async function getPhotographersById(photographerId) {
 /* getPhotographersById(photographerId) */
 
 
-async function displayData(photographe) {
+async function displayData(photographe, photographeMedias) {
     const photographersSection = document.querySelector(".photograph-header");
-    
     photographe.forEach((photograph) => {
         console.log(photograph);
-        const userCardDOM = getUserCardDOM(photograph);
+        const userCardDOM = getHeaderPhotograph(photograph);
         photographersSection.appendChild(userCardDOM);
     });
+    const photosSection = document.createElement('section')
+    main.appendChild(photosSection);
+    photographeMedias.forEach((media) => {
+        console.log(media);
+        if(media.image != undefined){
+            const photoWall = getMediasPhotographe(media)
+            photosSection.appendChild(photoWall)
+        }
+
+    })
 }
 async function init() {
     // Récupère les datas des photographes
     const  {photographe}  = await getPhotographersById(photographerId);
-    displayData(photographe);
+    const {photographeMedias} = await getPhotographersById(photographerId)
+    displayData(photographe, photographeMedias);
 }
 
 init();

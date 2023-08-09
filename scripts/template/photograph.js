@@ -1,4 +1,5 @@
-function getUserCardDOM(data) {
+// fonction d'assemblage des infos d'un photographe
+function getHeaderPhotograph(data) {
     const { name, portrait, tagline, city, country, price } = data;
     const picture = `./assets/photographers/${portrait}`;
     const main = document.querySelector("main")
@@ -33,4 +34,29 @@ function getUserCardDOM(data) {
     main.appendChild(rate);
 
     return (article);
+}
+// fonction d'assemblage des médias d'un photographe
+function getMediasPhotographe(data) {
+    const { image, likes, title, photographerId } = data;
+    const picture = `./assets/photographers/${photographerId}/${image}`
+    //création de la card
+    const cardPhotos = document.createElement('article');
+    //création de l'image
+    const img = document.createElement('img');
+    img.setAttribute("src", picture);
+    img.setAttribute("alt", "titre de l'image" + title);
+    //création du titre
+    const titlephoto = document.createElement('p');
+    titlephoto.textContent = title;
+    titlephoto.setAttribute("role", "titre de la photo")
+    const nblikes = document.createElement('span')
+    const iconelike = './assets/likes.png'
+    nblikes.textContent = likes + iconelike;
+
+    cardPhotos.appendChild(img)
+    cardPhotos.appendChild(titlephoto)
+    cardPhotos.appendChild(nblikes)
+
+
+    return (cardPhotos);
 }
