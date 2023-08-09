@@ -51,12 +51,12 @@ function getMediasPhotographe(data) {
 
     //création du titre
     const cardText = document.createElement('div')
+    cardText.className = "cardText"
     const titlephoto = document.createElement('p');
     titlephoto.textContent = title;
     titlephoto.setAttribute("role", "titre de la photo")
     const nblikes = document.createElement('span')
-    const iconelike = './assets/likes.png'
-    nblikes.textContent = likes + `${iconelike}`;
+    nblikes.textContent = likes;
 
     cardPhotos.appendChild(link)
 
