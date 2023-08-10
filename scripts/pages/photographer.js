@@ -22,24 +22,22 @@ async function getPhotographersById(photographerId) {
             photographeMedias: [...photographeMedias]
         })
 }
-/* getPhotographersById(photographerId) */
 
 
 async function displayData(photographe, photographeMedias) {
     const photographersSection = document.querySelector(".photograph-header");
     photographe.forEach((photograph) => {
-        console.log(photograph);
         const userCardDOM = getHeaderPhotograph(photograph);
         photographersSection.appendChild(userCardDOM);
     });
     const photosSection = document.querySelector('.photosSection')
     photographeMedias.forEach((media) => {
-        console.log(media);
-        if(media.image != undefined){
+        /* console.log(media); */
+        /* if(media.image != undefined){ */
             const photoWall = getMediasPhotographe(media)
-            console.log(photoWall);
+            /* console.log(photoWall); */
             photosSection.appendChild(photoWall);
-        }
+        /* } */
 
     });
 }

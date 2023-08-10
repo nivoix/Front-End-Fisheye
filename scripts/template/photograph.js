@@ -37,18 +37,26 @@ function getHeaderPhotograph(data) {
 }
 // fonction d'assemblage des médias d'un photographe
 function getMediasPhotographe(data) {
-    const { image, likes, title, photographerId } = data;
+    const { image, likes, title, photographerId, video } = data;
     const picture = `./assets/photographers/${photographerId}/${image}`
+    const film = `./assets/photographers/${photographerId}/${video}`
+    
     //création de la card
     const cardPhotos = document.createElement('article');
     const link = document.createElement('a')
-    //création de l'image
+    //création de la carte de l'image du média
     const cardImg = document.createElement('div')
     cardImg.className = "cardImg"
-    const img = document.createElement('img');
-    img.setAttribute("src", picture);
-    img.setAttribute("alt", "titre de l'image" + title);
-
+    const showmediaimg = document.createElement('img')
+    const showmediavideo = document.createElement('video')
+    const showmedia = image ? showmediaimg : showmediavideo;
+    image ? showmedia.setAttribute("src", picture) : showmedia.setAttribute("src", film);
+    showmedia.setAttribute("alt", "titre de l'image" + title);
+    if(video) {
+        showmediavideo.src = film
+        showmediavideo.controls= true
+    }
+    
     //création du titre
     const cardText = document.createElement('div')
     cardText.className = "cardText"
@@ -61,7 +69,7 @@ function getMediasPhotographe(data) {
     cardPhotos.appendChild(link)
 
     link.appendChild(cardImg)
-    cardImg.appendChild(img)
+    cardImg.appendChild(showmedia)
     
     link.appendChild(cardText)
     cardText.appendChild(titlephoto)
