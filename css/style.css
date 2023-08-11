@@ -48,7 +48,14 @@ a {
 }
 a:hover {
     scale: 1.05;
+    background-color: #e38570;
+    border-radius: 10%;
+    width: 140%;
+    & #name {
+        color: white;
+    }
 }
+
 
 .logo {
     height: 50px;

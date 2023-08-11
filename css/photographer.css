@@ -2,7 +2,7 @@ body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
 }
-
+/* *****************logo*************** */
 header {
     display: flex;
     flex-direction: row;
@@ -16,9 +16,11 @@ header img{
     width: 200px;
     height: 50px;
 }
+/* ***************END logo************** */
 #contact_modal {
     display: none;
 }
+
 main {
     display: flex;
     width: 100%;
@@ -32,6 +34,7 @@ main .photograph-header:nth-child(1){order: 1;}
 main h5:nth-child(2){order: 3;}
 main section:nth-child(3){order: 2;}
 
+/* **************likes et tarif*********** */
 main h5 {
     margin: 0;
     display: flex;
@@ -46,6 +49,9 @@ main h5 {
     align-items: center;
     justify-content: space-around;
 }
+/* ******************************************** */
+
+/* *************organisation de l'article********************* */
 .photograph-header article :nth-child(1){order: 1;margin: 0;}
 .photograph-header article :nth-child(2){order: 2;}
 .photograph-header article :nth-child(3){order: 3;}
@@ -57,19 +63,19 @@ main h5 {
 
 .photograph-header h2 {
     font-weight: 300;
-    font-size: 58px;
+    font-size: 4.6vw;
     color: #D3573C;
 }
 .photograph-header h3 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.9vw;
     line-height: 31.25px;
     color: #901C1C;
 }
 
 .photograph-header h4{
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.4vw;
     line-height: 23.44px;
     color: #525252;
     margin: 0;
@@ -89,9 +95,11 @@ main h5 {
     gap: 10%;
     width: 87%;
 }
+/* ********************organisation du header de la page photographe *****************************/
 .photograph-header button:nth-child(1) {order: 2;}
 .photograph-header img:nth-child(2) {order: 3; width: 150px; height: 150px; border-radius: 50%}
 .photograph-header article:nth-child(3) {order: 1;}
+/* ********************************************************************************************* */
 
 section {
     display: grid;
@@ -101,7 +109,7 @@ section {
     position: absolute;
     right: 100px;
     left: 100px;
-    top: 200px;
+    top: 15.8vw;
 }
 section article {
     width: 100%;
@@ -144,11 +152,11 @@ section article img, section article video {
 
 .cardText span::after {
     content: "\002665";
-    font-size: 33px;
+    font-size: 2.6vw;
     color: #901C1C;
 }
 
-
+/* *******************************MODAL START**************************** */
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -160,6 +168,9 @@ section article img, section article video {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    &:hover {
+        scale: 1.07;
+    }
 }
 
 .modal {
@@ -175,6 +186,8 @@ section article img, section article video {
 }
 
 .modal header {
+    margin-top: auto;
+    margin-left: auto;
     justify-content: space-between;
     width: 100%;
 }
@@ -184,7 +197,7 @@ section article img, section article video {
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 3.16vw;
     font-weight: normal;
     text-align: center;
 }
@@ -214,4 +227,5 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 36px;
 }

@@ -13,6 +13,7 @@ function getUserCardDOM(data) {
     img.setAttribute("alt", "protrait du photographe" + name)
     //création du nom du photographe
     const h2 = document.createElement( 'h2' );
+    h2.id = "name";
     h2.textContent = name;
     h2.setAttribute("role", "name");
     //création de sa ville et pays

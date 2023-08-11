@@ -26,11 +26,15 @@ function getHeaderPhotograph(data) {
     const img = document.createElement( 'img' );
     img.setAttribute("src", picture)
     img.setAttribute("alt", "protrait du photographe" + name)
+
     photographHeader.appendChild(article)
+
     article.appendChild(h2);
     article.appendChild(h3);
     article.appendChild(tag);
+
     photographHeader.appendChild(img);
+    
     main.appendChild(rate);
 
     return (article);
@@ -57,12 +61,13 @@ function getMediasPhotographe(data) {
         showmediavideo.controls= true
     }
     
-    //création du titre
+    //création du titre de l'image
     const cardText = document.createElement('div')
     cardText.className = "cardText"
     const titlephoto = document.createElement('p');
     titlephoto.textContent = title;
     titlephoto.setAttribute("role", "titre de la photo")
+    // création du nb de likes de la photo
     const nblikes = document.createElement('span')
     nblikes.textContent = likes;
 
