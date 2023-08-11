@@ -3,7 +3,7 @@ let params = new URL(document.location).searchParams;
 let photographerId = params.get("id");
 const main = document.querySelector('main')
 
-
+// récupération des infos et médias du photographe sélectionné
 async function getPhotographersById(photographerId) {
     let infoPhotographers = []
     let photographe = []
@@ -23,13 +23,15 @@ async function getPhotographersById(photographerId) {
         })
 }
 
-
+// affichage de la page d'un photographe
 async function displayData(photographe, photographeMedias) {
+////// affichage des infos du photographe
     const photographersSection = document.querySelector(".photograph-header");
     photographe.forEach((photograph) => {
         const userCardDOM = getHeaderPhotograph(photograph);
         photographersSection.appendChild(userCardDOM);
     });
+/////// affichage des photos du photographe
     const photosSection = document.querySelector('.photosSection')
     photographeMedias.forEach((media) => {
         /* console.log(media); */
@@ -49,3 +51,4 @@ async function init() {
 }
 
 init();
+

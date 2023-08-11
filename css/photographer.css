@@ -41,7 +41,7 @@ main h5 {
     background-color: #DB8876;
     z-index: 1;
     position: fixed;
-    bottom: 68px;
+    bottom: 86px;
     right: 5%;
     align-items: center;
     justify-content: space-around;
@@ -85,18 +85,18 @@ main h5 {
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 7%;
+    justify-content: space-around;
+    gap: 10%;
     width: 87%;
 }
 .photograph-header button:nth-child(1) {order: 2;}
-.photograph-header img:nth-child(2) {order: 3; width: 150px; border-radius: 50%}
+.photograph-header img:nth-child(2) {order: 3; width: 150px; height: 150px; border-radius: 50%}
 .photograph-header article:nth-child(3) {order: 1;}
 
 section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 9%;
+    gap: 5%;
     margin-top: 100px;
     position: absolute;
     right: 100px;
@@ -105,7 +105,6 @@ section {
 }
 section article {
     width: 100%;
-    height: 350px;
 }
 section article a {
     display: flex;
@@ -116,7 +115,7 @@ section article a {
 }
 .cardImg {
     width: 100%;
-    height: 90%;
+    height: 95%;
 }
 section article img, section article video {
     object-fit: cover;
@@ -136,9 +135,11 @@ section article img, section article video {
 .cardText p, .cardText span {
     font-size: 24px;
     color: #901C1C;
+    margin: 0;
 }
 .cardText span {
-    width: 16%
+    width: 16%;
+    text-align: right;
 }
 
 .cardText span::after {
