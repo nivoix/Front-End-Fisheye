@@ -61,7 +61,7 @@ main h5 {
     flex-direction: column;
 }
 
-.photograph-header h2 {
+.photograph-header h1 {
     font-weight: 300;
     font-size: 4.6vw;
     color: #D3573C;
@@ -168,9 +168,9 @@ section article img, section article video {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    &:hover {
-        scale: 1.07;
-    }
+}
+.contact_button:hover {
+    scale: 1.07;
 }
 
 .modal {
@@ -210,6 +210,8 @@ form {
 }
 
 form label {
+    width: 100%;
+    text-align: start;
     color: #312E2E;
     font-size: 36px;
 }
@@ -220,6 +222,7 @@ form div {
     width: 100%;
     align-items: self-start;
     margin-bottom: 26px;
+    align-items: end;
 }
 
 form input {

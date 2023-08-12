@@ -7,9 +7,9 @@ function getHeaderPhotograph(data) {
     //création de l'article
     const article = document.createElement( 'article' );
     //création du nom du photographe
-    const h2 = document.createElement( 'h2' );
-    h2.textContent = name;
-    h2.setAttribute("role", "nom du photographe");
+    const h1 = document.createElement( 'h1' );
+    h1.textContent = name;
+    h1.setAttribute("role", "nom du photographe");
     //création de sa ville et pays
     const h3 = document.createElement( 'h3');
     h3.textContent = city+', '+ country;
@@ -29,7 +29,7 @@ function getHeaderPhotograph(data) {
 
     photographHeader.appendChild(article)
 
-    article.appendChild(h2);
+    article.appendChild(h1);
     article.appendChild(h3);
     article.appendChild(tag);
 

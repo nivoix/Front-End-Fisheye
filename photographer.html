@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="./css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -21,13 +21,31 @@
 			<div class="modal" >
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="./assets/icons/close.svg" onclick="closeModal()" />
+          <img src="./assets/icons/close.svg" onclick="closeModal()" alt="icone de fermeture de la modal"/>
         </header>
 				<form>
 					<div class="form">
-						<label for="prénom">Prénom</label>
-						<input type="text" name="prénom" id="prénom" aria-labelledby="prénom" placeholder="Quel est votre prénom ?" aria-required="true" aria-invalid="true"/>
-					</div>
+            <div class="prenom">
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom" id="prenom" aria-labelledby="prenom" placeholder="Quel est votre prenom ?" aria-required="true" aria-invalid="true"/>
+              <div class="messageInfoprenom"></div>
+            </div>
+            <div class="nom">
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" id="nom" aria-labelledby="nom" placeholder="Quel est votre nom ?" aria-required="true" aria-invalid="true"/>
+              <div class="messageInfonom"></div>
+            </div>
+           <div class="email">
+             <label for="email">email</label>
+             <input type="email" name="email" id="email" aria-labelledby="email" placeholder="Quel est votre email ?" aria-required="true" aria-invalid="true"/>
+             <div class="messageInfoemail"></div>
+            </div>
+            <div class="message">
+              <label for="message">message</label>
+              <input type="text" name="message" id="message" aria-labelledby="message" placeholder="Quel est votre message ?" aria-required="true" aria-invalid="true"/>
+              <div class="messageInfomessage"></div>              
+            </div>
+          </div>
           <button type="submit" class="contact_button" title="envoyer">Envoyer</button>
 				</form>
 			</div>

@@ -51,9 +51,9 @@ a:hover {
     background-color: #e38570;
     border-radius: 10%;
     width: 140%;
-    & #name {
+}
+a:hover #name {
         color: white;
-    }
 }
 
 
