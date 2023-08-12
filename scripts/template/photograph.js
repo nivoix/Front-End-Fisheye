@@ -9,19 +9,19 @@ function getHeaderPhotograph(data) {
     //création du nom du photographe
     const h2 = document.createElement( 'h2' );
     h2.textContent = name;
-    h2.setAttribute("role", "name");
+    h2.setAttribute("role", "nom du photographe");
     //création de sa ville et pays
     const h3 = document.createElement( 'h3');
     h3.textContent = city+', '+ country;
-    h3.setAttribute("role", "localisation");
+    h3.setAttribute("role", "localisation du photographe");
     // création de son slogan
     const tag = document.createElement( 'h4');
     tag.textContent = "\u00ab"+ tagline +"\u00bb";
-    tag.setAttribute("role", "tag");
+    tag.setAttribute("role", "slogan du photographe");
     // création de son tarif
     const rate = document.createElement( 'h5');
     rate.textContent = price+'€/jour';
-    rate.setAttribute("role", "rate");
+    rate.setAttribute("role", "tarif du photographe");
     // création de l'image
     const img = document.createElement( 'img' );
     img.setAttribute("src", picture)
@@ -41,7 +41,7 @@ function getHeaderPhotograph(data) {
 }
 // fonction d'assemblage des médias d'un photographe
 function getMediasPhotographe(data) {
-    const { image, likes, title, photographerId, video } = data;
+    const { image, likes, title, photographerId, video, describVideo } = data;
     const picture = `./assets/photographers/${photographerId}/${image}`
     const film = `./assets/photographers/${photographerId}/${video}`
     
@@ -51,14 +51,15 @@ function getMediasPhotographe(data) {
     //création de la carte de l'image du média
     const cardImg = document.createElement('div')
     cardImg.className = "cardImg"
-    const showmediaimg = document.createElement('img')
-    const showmediavideo = document.createElement('video')
-    const showmedia = image ? showmediaimg : showmediavideo;
+    const showMediaImg = document.createElement('img')
+    const showMediaVideo = document.createElement('video')
+    const showmedia = image ? showMediaImg : showMediaVideo;
     image ? showmedia.setAttribute("src", picture) : showmedia.setAttribute("src", film);
     showmedia.setAttribute("alt", "titre de l'image" + title);
     if(video) {
-        showmediavideo.src = film
-        showmediavideo.controls= true
+        showMediaVideo.src = film
+        showMediaVideo.controls= true
+        showMediaVideo.setAttribute("alt", describVideo)
     }
     
     //création du titre de l'image

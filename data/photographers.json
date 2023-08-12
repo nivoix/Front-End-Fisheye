@@ -117,7 +117,8 @@
 			"video": "Art_Wooden_Horse_Sculpture.mp4",
 			"likes": 24,
 			"date": "2011-12-08",
-			"price": 100
+			"price": 100,
+			"describVideo":"Vidéo d'une sculpture de cheval en bois d'art"
 		  },
 		{
 			"id": 7502053,
@@ -226,7 +227,8 @@
 			"video": "Animals_Puppiness.mp4",
 			"likes": 52,
 			"date": "2016-06-12",
-			"price": 70
+			"price": 70,
+			"describVideo":"Vidéo d'un chiot jouant avec sa laisse dans le sable en bord de mer"
 		},
 		{
 			"id": 394583434,
@@ -235,7 +237,8 @@
 			"video": "Travel_Rock_Mountains.mp4",
 			"likes": 23,
 			"date": "2017-03-18",
-			"price": 45
+			"price": 45,
+			"describVideo":"Vidéo, depuis un drone, d'un voyage dans les montagnes rocheuses"
 		},
 		{
 			"id": 343423425,
@@ -389,7 +392,8 @@
 			"video": "Animals_Wild_Horses_in_the_mountains.mp4",
 			"likes": 142,
 			"date": "2019-08-23",
-			"price": 60
+			"price": 60,
+			"describVideo":"Vidéo d'une horde de chevaux sauvages dans les montagnes"
 		  },
 		{
 			"id": 95234343,
@@ -480,7 +484,8 @@
 			"video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
 			"likes": 57,
 			"date": "2020-01-20",
-			"price": 65
+			"price": 65,
+			"describVideo": "Vidéo depuis un drone au dessus d'un échangeur d'autoroute ayant une architecture circulaire à Buenos Aires"
 		  },
 		{
 			"id": 3523523534,
@@ -494,11 +499,12 @@
 		{
 			"id": 952343423,
 			"photographerId": 930,
-			"title": "Tricks in te air",
+			"title": "Tricks in the air",
 			"video": "Sport_Tricks_in_the_air.mp4",
 			"likes": 150,
 			"date": "2018-02-30",
-			"price": 70
+			"price": 70,
+			"describVideo": "Suspendue à une corde, une femme réalise ce sport extrême issu des arts martiaux mêlant différentes acrobaties en provenance du taekwondo, de la gymnastique, capoeira, du freerun et breakdance"
 		  },
 		{
 			"id": 235234343,
