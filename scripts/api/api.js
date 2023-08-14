@@ -9,28 +9,14 @@ class Api {
             .then(res => res)
             .catch(err => console.log('une erreur est survenue', err))
     }
-    /* async getmedias() {
-        return fetch(this._url)
-            .then(res => res.json())
-            .then(res => res.media)
-            .catch(err => console.log('une erreur est survenue', err))
-    } */
+    
 }
-class /* MovieApi */PhotographerApi extends Api {
+class PhotographerApi extends Api {
     constructor(url) {
         super(url)
     }
 
-    async /* getMovies */getPhotographers() {
+    async getPhotographers() {
         return await this.get()
     }
 }
-
-/* class MediaApi extends Api {
-    constructor(url) {
-        super(url)
-    }
-    async getMedias() {
-        return await this.getmedias()
-    }
-} */
