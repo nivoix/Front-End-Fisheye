@@ -26,34 +26,40 @@
 				<form>
 					<div class="form">
             <div class="prenom">
-              <label for="prenom">Prénom</label>
-              <input type="text" name="prenom" id="prenom" aria-labelledby="prenom" placeholder="Quel est votre prenom ?" aria-required="true" aria-invalid="true"/>
-              <div class="messageInfoprenom"></div>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom" aria-labelledby="prenom" placeholder="Quel est votre prénom ?" aria-required="true" aria-invalid="true"/>
+                <div class="messageInfoprenom"></div>
             </div>
             <div class="nom">
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom" aria-labelledby="nom" placeholder="Quel est votre nom ?" aria-required="true" aria-invalid="true"/>
-              <div class="messageInfonom"></div>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" aria-labelledby="nom" placeholder="Quel est votre nom ?" aria-required="true" aria-invalid="true"/>
+                <div class="messageInfonom"></div>
             </div>
            <div class="email">
-             <label for="email">email</label>
-             <input type="email" name="email" id="email" aria-labelledby="email" placeholder="Quel est votre email ?" aria-required="true" aria-invalid="true"/>
-             <div class="messageInfoemail"></div>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" aria-labelledby="email" placeholder="Quel est votre email ?" aria-required="true" aria-invalid="true"/>
+              <div class="messageInfoemail"></div>
             </div>
             <div class="message">
-              <label for="message">message</label>
-              <input type="text" name="message" id="message" aria-labelledby="message" placeholder="Quel est votre message ?" aria-required="true" aria-invalid="true"/>
-              <div class="messageInfomessage"></div>              
+                <label for="message">Message</label>
+                <textarea name="message" id="message" row="4" cols="10" aria-labelledby="message" placeholder="Quel est votre message ?" aria-required="true" aria-invalid="true"></textarea>
+                <div class="messageInfomessage"></div>              
             </div>
           </div>
           <button type="submit" class="contact_button" title="envoyer">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="./scripts/pages/photographer.js"></script>
-    <script src="./scripts/factory/photographer.js"></script>
-    <script src="./scripts/template/photograph.js"></script>
+    <div id="mediaModal" aria-label="image closeup view" aria-hidden="true">
+			<button id="left-arrow" aria-label="Previous image" onclick="changeMedia('left')"><</button>
+			<button id="right-arrow" aria-label="Next image" onclick="changeMedia('right')">></button>
+      <img id="closeMediaModal" src="./assets/icons/close.svg" onclick="closeLightBoxModal()" alt="icone de fermeture de la modal"/>
+    </div>
     <script src="./scripts/utils/contactForm.js"></script>
+    <script src="./scripts/pages/photographer.js"></script>
+    <script src="./scripts/factory/photographersFactory.js"></script>
+    <script src="./scripts/template/photograph.js"></script>
+    <script src="./scripts/utils/lightBox.js"></script>
 
   </body>
 </html>

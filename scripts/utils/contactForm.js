@@ -4,6 +4,7 @@ const areamodal = document.querySelector('.modal')
 function displayModal() {
 	modal.style.display = "block";
     modal.setAttribute("aria-hidden", false)
+    pagecontent.style.visibility = "hidden"
 }
 // fonction de fermeture de la modal de contact
 function closeModal() {
@@ -11,13 +12,14 @@ function closeModal() {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", true);
     pagecontent.style.visibility = "visible"
+    pagecontent.setAttribute("aria-hidden", false)
 }
 
 // ecoute du bouton pour ouvrir la modal et masquer le reste de la page
 const openModal = document.querySelector(".photograph-header button")
 const pagecontent = document.querySelector("main")
 openModal.addEventListener("click", () => {
-    pagecontent.style.visibility = "hidden"
+    pagecontent.setAttribute("aria-hidden", true)
     displayModal()
 })
 

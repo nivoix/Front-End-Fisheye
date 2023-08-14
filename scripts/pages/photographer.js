@@ -34,14 +34,11 @@ async function displayData(photographe, photographeMedias) {
 /////// affichage des photos du photographe
     const photosSection = document.querySelector('.photosSection')
     photographeMedias.forEach((media) => {
-        /* console.log(media); */
-        /* if(media.image != undefined){ */
-            const photoWall = getMediasPhotographe(media)
-            /* console.log(photoWall); */
-            photosSection.appendChild(photoWall);
-        /* } */
-
+        const photoWall = getMediasPhotographe(media)
+        photosSection.appendChild(photoWall);
+        getImagesLightBox(media)
     });
+
 }
 async function init() {
     // Récupère les datas des photographes

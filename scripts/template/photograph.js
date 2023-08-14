@@ -1,7 +1,7 @@
 // fonction d'assemblage des infos d'un photographe
 function getHeaderPhotograph(data) {
     const { name, portrait, tagline, city, country, price } = data;
-    const picture = `./assets/photographers/${portrait}`;
+    const picture = `./assets/images/${portrait}`;
     const main = document.querySelector("main")
     const photographHeader = document.querySelector(".photograph-header")
     //création de l'article
@@ -48,6 +48,9 @@ function getMediasPhotographe(data) {
     //création de la card
     const cardPhotos = document.createElement('article');
     const link = document.createElement('a')
+    link.setAttribute("href", "#")
+    link.setAttribute("onclick", "displayLightBoxModal()")
+    link.className = "lightBox"
     //création de la carte de l'image du média
     const cardImg = document.createElement('div')
     cardImg.className = "cardImg"
@@ -82,4 +85,13 @@ function getMediasPhotographe(data) {
     cardText.appendChild(nblikes)
 
     return (cardPhotos);
+}
+
+function getImagesLightBox (data) {
+    const cardImgLightBox = document.getElementById('mediaModal')
+    
+    const {image, video} = data
+    console.log(data);
+    console.log(image);
+    console.log(video);
 }
