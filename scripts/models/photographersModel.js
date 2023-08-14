@@ -4,7 +4,7 @@ class photographersModel {
         this._id = data.id
         this._city = data.city
         this._country = data.country
-        this._tagline = data.tegline
+        this._tagline = data.tagline
         this._price = data.price
         this._portrait = data.portrait
     }

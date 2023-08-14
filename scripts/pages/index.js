@@ -7,10 +7,11 @@ class App {
 
     async main() {
         const photographersData = await this.photographersApi.get()
-        const Photographers = photographersData.map(photographe => new photographersFactory(photographe, 'photographers'))
-    
+        const photographersDataAll = photographersData.photographers;
+        const Photographers = photographersDataAll.map(photographe => new photographersFactory(photographe, 'photographersindex'))
         Photographers.forEach(photographe => {
             const Template = new photographerCard(photographe)
+            console.log(Template);
             this.$photographersSection.appendChild(Template.createPhotographeCard())
         })
     }
