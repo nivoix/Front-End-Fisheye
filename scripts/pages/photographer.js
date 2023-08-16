@@ -1,4 +1,4 @@
-class AppOnePhotograph {
+class App {
     constructor() {
     this.$photographSection = document.querySelector(".photograph-header")
     this.$photosSection = document.querySelector('.photosSection')
@@ -21,11 +21,20 @@ class AppOnePhotograph {
         // récupération et médias du photographe sélectionné
         const allMediasPhotographers = photographData.media
         const photographMediaSelected = allMediasPhotographers.filter((photographer) => photographer.photographerId == photographerId)
-        photographMediaSelected.forEach(media => {
+        
+        photographMediaSelected.forEach((media, index) => {
             const Template = new mediasCard(media)
-            this.$photosSection.appendChild(Template.createMediasCard())
+            this.$photosSection.appendChild(Template.createMediasCard(index))
+        })
+        const articles = document.querySelectorAll('.cardPhotos')
+        console.log(articles);
+        Array.from(articles).forEach((article, index) => {
+            article.addEventListener('click', () => {
+                console.log(index);
+                displayLightBoxModal(index);
+            })
         })
     }
 }
-const app = new AppOnePhotograph()
+const app = new App()
 app.main()

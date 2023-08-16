@@ -21,7 +21,7 @@
 			<div class="modal" >
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="./assets/icons/close.svg" onclick="closeModal()" alt="icone de fermeture de la modal"/>
+          <img src="./assets/icons/close.svg" class="btn_close" onclick="closeModal()" alt="icone de fermeture de la modal"/>
         </header>
 				<form>
 					<div class="form">
@@ -53,7 +53,8 @@
     <div id="mediaModal" aria-label="image closeup view" aria-hidden="true">
 			<button id="left-arrow" aria-label="Previous image" onclick="changeMedia('left')"><</button>
 			<button id="right-arrow" aria-label="Next image" onclick="changeMedia('right')">></button>
-      <img id="closeMediaModal" src="./assets/icons/close.svg" onclick="closeLightBoxModal()" alt="icone de fermeture de la modal"/>
+      <img id="closeMediaModal" src="./assets/icons/close.svg" class="btn_close" onclick="closeLightBoxModal()" alt="icone de fermeture de la modal"/>
+      <div class="boxmedia"></div>
     </div>
     <script src="./scripts/api/api.js"></script>
     <script src="./scripts/factory/photographersFactory.js"></script>
@@ -61,6 +62,7 @@
     <script src="./scripts/models/photographersModel.js"></script>
     <script src="./scripts/template/photographCard.js"></script>
     <script src="./scripts/template/mediasCard.js"></script>
+    <script src="./scripts/template/lightBoxModal.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>
     <script src="./scripts/utils/lightBox.js"></script>
     <script src="./scripts/pages/photographer.js"></script>
