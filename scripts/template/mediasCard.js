@@ -11,7 +11,7 @@ class mediasCard {
         //création de la card
         this.cardPhotos = document.createElement('article');
         this.cardPhotos.className = "cardPhotos"
-        this.cardPhotos.id = index
+        /* this.cardPhotos.id = index */
         this.link = document.createElement('a')
         /* this.link.setAttribute("href", "#") */
         /* this.link.setAttribute("onclick", "displayLightBoxModal()") */
@@ -21,9 +21,9 @@ class mediasCard {
         this.cardImg.className = "cardImg"
         // choix des balises, des sources et des titres en fonction du média
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
-        this.mediaElement.src = `./assets/photographers/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
+        this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
-		this.mediaElement.controls = true
+		this.mediaElement.controls = false
 		this.mediaElement.autoplay = false
                 
         //création du titre de l'image

@@ -53,7 +53,7 @@ main h5 {
     background-color: #DB8876;
     z-index: 1;
     position: fixed;
-    bottom: 86px;
+    bottom: 0;
     right: 5%;
     align-items: center;
     justify-content: space-around;
@@ -155,8 +155,11 @@ section article img, section article video {
     margin: 0;
 }
 .cardText span {
+    display: flex;
     width: 16%;
     text-align: right;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .cardText span::after {
@@ -181,17 +184,19 @@ section article img, section article video {
 .contact_button:hover {
     scale: 1.07;
 }
-
+#contact_modal{
+    justify-content: center;
+    width: 100%;
+}
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+    padding: 21px;
+    margin-inline: 30px;
 }
 
 .modal header {
@@ -206,7 +211,6 @@ section article img, section article video {
     width: 4vw;
 }
 .btn_close{
-    background-color: red;
     width: 3vw;
 }
 .btn_close:hover {
@@ -237,9 +241,9 @@ form div {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+    margin-bottom: 12px;
     align-items: end;
+    font-size: 2.3vw
 }
 
 form input {
@@ -257,10 +261,15 @@ form textarea {
     font-size: 36px;
 }
 .form {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+    align-items: end;
 }
 /* ********************************MODAL END*********************** */
-/* ******************************media modal start */
+/* ******************************media modal start **************************/
 .lightBox {
     cursor: pointer;
 }
@@ -268,8 +277,8 @@ form textarea {
     scale: 1.05;
 }
 #mediaModal {
-    width: 60vw;
-    height: 60vw;
+    width: 45vw;
+    height: 45vw;
     visibility: hidden;
     border-radius: 5px;
     margin: auto;
@@ -280,20 +289,22 @@ form textarea {
     font-size: 6vw;
     position: absolute;
     top: 40%;
-    left: -9%;
+    left: -12%;
     color: black;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 #right-arrow {
     font-size: 6vw;
     position: absolute;
     top: 40%;
-    right: -9%;
+    right: -12%;
     color: black;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 #left-arrow:hover, #right-arrow:hover {
@@ -306,8 +317,8 @@ form textarea {
     width: 3vw;
     position: absolute;
     top: 3%;
-    background-color: red;
-    right: -8%;
+    right: -10%;
+    cursor: pointer;;
 }
 
 #mediaModal article {
@@ -330,4 +341,25 @@ form textarea {
     align-items: center;
     width: 100%;
     justify-content: space-between;
+}
+/************************Media modal end ******************************************/
+
+/*************************lightBox start *****************************************/
+
+.boxmedia article{
+    display: none;
+}
+
+article.active{
+    display: block;
+    animation: fade 2s;
+} 
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

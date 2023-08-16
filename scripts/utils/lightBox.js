@@ -11,32 +11,77 @@ function displayLightBoxModal(index) {
 }
 // fonction de fermeture de la modal des médias
 function closeLightBoxModal() {
-    /* const modal = document.getElementById("contact_modal"); */
     LightBox.style.display = "none";
     LightBox.setAttribute("aria-hidden", true);
     pagecontent.style.visibility = "visible"
     pagecontent.setAttribute("aria-hidden", false)
+    location.reload()
+
 }
+//Le parametre "code" vient de l'index de la photo selectionnée
 async function launchLightBox(code) {
     const photosSectionLightBox = document.querySelector('.boxmedia')
+    //recupération des données
     let params = new URL(document.location).searchParams
     let photographerId = params.get("id")
     datasurl = new PhotographerApi(`./data/photographers.json`)
     const data = await datasurl.get()
+    //recupération des données spécifiques aux médias
     const mediadata = data.media
+    //recherche des photos du photographe sélectionné
     allDataOnePhotograph = mediadata.filter((photograph) => photograph.photographerId == photographerId)
-    
-    console.log(allDataOnePhotograph);
-    console.log(allDataOnePhotograph);
-    const dataSelected = allDataOnePhotograph.find((e, index) => index == code)
-    console.log(dataSelected);
-    const Template = new lightBoxModal(dataSelected)
-    photosSectionLightBox.appendChild(Template.createLightBoxModal())
-
-    /* allDataOnePhotograph.forEach(media => {
+    //affichage de toutes les images
+    allDataOnePhotograph.forEach((media, count) => {
         const Template = new lightBoxModal(media)
-        photosSectionLightBox.appendChild(Template.createLightBoxModal())
-    }) */
+        photosSectionLightBox.appendChild(Template.createLightBoxModal(count))
+    })
+    //recherche de la photo et de son titre selectionnée pour l'affichée en première
+    let imgselect = document.getElementById(`${code}`)
+    imgselect.classList.add('active')
+    
+    //implémentation des boutons next et previous
+    const precedent = document.getElementById('left-arrow')
+    const suivant = document.getElementById('right-arrow')
+    const images = document.querySelectorAll('.boxmedia article')
+    const nbslides = images.length
+    let imgactive = document.querySelector('.active')
+    console.log(imgactive);
+    console.log(imgactive.id);
+    let count = imgactive.id
+    function previous () {
+        images[count].classList.remove('active')
+        if(count > 0){
+            count--
+        }else {
+            count = nbslides-1
+        }
+        images[count].classList.add('active')
+        console.log(count);
+    }
+    precedent.addEventListener('click', previous)
+    
+    function next () {
+        images[count].classList.remove('active')
+        if(count < nbslides -1) {
+            count++
+        }else {
+            count = 0
+        }
+        images[count].classList.add('active')
+        console.log(count);
+    }
+    suivant.addEventListener('click', next)
+    
+    function keyPress(e) {
+        console.log(e);
+        if(e.keyCode === 37) {
+            previous()
+        } else if(e.keyCode === 39) {
+            next()
+        }else if(e.keyCode === 27) {
+            location.reload()
+        }
+    }
+    document.addEventListener('keydown', keyPress)
 }
-
 

@@ -6,7 +6,7 @@ class photographerCard {
         return this._photographe
     }
     createPhotographeCard() {
-        const picture = `${this._photographe.portrait}`;    
+        const picture = `./assets/images/${this._photographe.portrait}`;    
         //création de l'article
         this.article = document.createElement( 'article' );
         //creation du lien 
@@ -32,7 +32,7 @@ class photographerCard {
         this.tag.setAttribute("role", "slogan du phototgraphe");
         // création de son tarif
         this.rate = document.createElement( 'h5');
-        this.rate.textContent = `${this._photographe.price}`;
+        this.rate.textContent = `${this._photographe.price}` + "€/jour";
         this.rate.setAttribute("role", "tarif du photographe");
         // articulation des éléments créés, les uns avec les autres
         this.article.appendChild(this.link);

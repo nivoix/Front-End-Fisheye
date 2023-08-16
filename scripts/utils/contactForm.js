@@ -2,7 +2,7 @@ const modal = document.getElementById("contact_modal");
 const areamodal = document.querySelector('.modal')
 //fonction d'ouverture de la modal de contact
 function displayModal() {
-	modal.style.display = "block";
+	modal.style.display = "flex";
     modal.setAttribute("aria-hidden", false)
     pagecontent.style.visibility = "hidden"
 }
@@ -82,8 +82,10 @@ function validateForm () {
         inputError.setAttribute("aria-invalid", true)
         inputError.style.border="4px solid #e54858"
         infosaisie.textContent= msgerror
-        infosaisie.style.color="red"
-        infosaisie.style.backgroundColor = "white"
+        infosaisie.style.color="white"
+        infosaisie.style.backgroundColor = "red"
+        infosaisie.style.width = "fit-content"
+
     }
     // fonction de validation complète du formulaire et récupération des données saisies
     function controlForm () {

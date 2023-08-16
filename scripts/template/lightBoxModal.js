@@ -7,14 +7,15 @@ class lightBoxModal {
         return this._photos
     }
 
-    createLightBoxModal() {
-        this.cardPhoto = document.createElement('article')    
+    createLightBoxModal(index) {
+        this.cardPhoto = document.createElement('article')
+        this.cardPhoto.id = index  
         this.cardImg = document.createElement('div')
         this.cardImg.className = "cardImgLightBox"
         // choix des balises, des sources et des titres en fonction du média
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
         this.mediaElement.className = "boxMediaElement"
-        this.mediaElement.src = `./assets/photographers/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
+        this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
 		this.mediaElement.controls = true
 		this.mediaElement.autoplay = false

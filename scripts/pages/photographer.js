@@ -21,16 +21,15 @@ class App {
         // récupération et médias du photographe sélectionné
         const allMediasPhotographers = photographData.media
         const photographMediaSelected = allMediasPhotographers.filter((photographer) => photographer.photographerId == photographerId)
-        
-        photographMediaSelected.forEach((media, index) => {
+                
+        photographMediaSelected.forEach((media) => {
             const Template = new mediasCard(media)
-            this.$photosSection.appendChild(Template.createMediasCard(index))
+            this.$photosSection.appendChild(Template.createMediasCard())
         })
+        //récupération de l'index de l'image cliquée pour ouvrir la lightBox
         const articles = document.querySelectorAll('.cardPhotos')
-        console.log(articles);
         Array.from(articles).forEach((article, index) => {
             article.addEventListener('click', () => {
-                console.log(index);
                 displayLightBoxModal(index);
             })
         })
@@ -38,3 +37,14 @@ class App {
 }
 const app = new App()
 app.main()
+
+
+
+//pour les likes//////////////////////////////////
+/* let totalLike = 0;
+
+  const displaylikes = medias.map((media) => {
+    totalLike += media.likes;
+    document.querySelector("#totalLike").innerHTML = totalLike;
+  });
+} */
