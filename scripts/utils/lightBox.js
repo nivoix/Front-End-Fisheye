@@ -29,7 +29,7 @@ async function launchLightBox(code) {
     //recupération des données spécifiques aux médias
     const mediadata = data.media
     //recherche des photos du photographe sélectionné
-    allDataOnePhotograph = mediadata.filter((photograph) => photograph.photographerId == photographerId)
+    let allDataOnePhotograph = mediadata.filter((photograph) => photograph.photographerId == photographerId)
     //affichage de toutes les images
     allDataOnePhotograph.forEach((media, count) => {
         const Template = new lightBoxModal(media)
@@ -39,7 +39,7 @@ async function launchLightBox(code) {
     let imgselect = document.getElementById(`${code}`)
     imgselect.classList.add('active')
     
-    //implémentation des boutons next et previous
+    //implémentation des boutons next et previous///////////////////////////////////////////////
     const precedent = document.getElementById('left-arrow')
     const suivant = document.getElementById('right-arrow')
     const images = document.querySelectorAll('.boxmedia article')
@@ -48,6 +48,7 @@ async function launchLightBox(code) {
     console.log(imgactive);
     console.log(imgactive.id);
     let count = imgactive.id
+    // bouton previous///////////////////////////////////////////
     function previous () {
         images[count].classList.remove('active')
         if(count > 0){
@@ -59,7 +60,7 @@ async function launchLightBox(code) {
         console.log(count);
     }
     precedent.addEventListener('click', previous)
-    
+    // bouton next/////////:
     function next () {
         images[count].classList.remove('active')
         if(count < nbslides -1) {
@@ -71,7 +72,7 @@ async function launchLightBox(code) {
         console.log(count);
     }
     suivant.addEventListener('click', next)
-    
+    // boutons clavier//////////////////:
     function keyPress(e) {
         console.log(e);
         if(e.keyCode === 37) {
@@ -83,5 +84,6 @@ async function launchLightBox(code) {
         }
     }
     document.addEventListener('keydown', keyPress)
+    ///////////////////////////////////////////////////////////////////////////////
 }
 

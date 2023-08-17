@@ -34,7 +34,13 @@ class mediasCard {
         this.titlephoto.setAttribute("role", "titre de la photo")
         // création du nb de likes de la photo
         this.nblikes = document.createElement('span')
+        this.nblikes.className = "nblikes"
+        this.nblikes.value = parseInt(`${this._photos.likes}`)
         this.nblikes.textContent = `${this._photos.likes}`;
+
+        this.heart = document.createElement('img')
+        this.heart.className = "heart"
+        this.heart.setAttribute("src","./assets/heart-regular.svg") 
 
         this.cardPhotos.appendChild(this.link)
 
@@ -44,6 +50,7 @@ class mediasCard {
         this.link.appendChild(this.cardText)
         this.cardText.appendChild(this.titlephoto)
         this.cardText.appendChild(this.nblikes)
+        this.cardText.appendChild(this.heart)
 
         return this.cardPhotos;
         }

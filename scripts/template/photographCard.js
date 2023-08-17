@@ -29,6 +29,10 @@ class photographCard {
         this.rate = document.createElement('h5');
         this.rate.textContent = `${this._photograph.price}`+"€/jour";
         this.rate.setAttribute("role", "tarif du photographe");
+        // création du coeur
+        this.heart = document.createElement('img')
+        this.heart.className = "heart"
+        this.heart.setAttribute('src', './assets/heart-solid-black.svg')
         // création de l'image
         this.img = document.createElement('img');
         this.img.setAttribute("src", picture)
@@ -43,6 +47,8 @@ class photographCard {
         photographHeader.appendChild(this.img);
         
         main.appendChild(this.rate);
+
+        this.rate.appendChild(this.heart)
 
         return this.article;
         }

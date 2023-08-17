@@ -27,12 +27,15 @@ class App {
             this.$photosSection.appendChild(Template.createMediasCard())
         })
         //récupération de l'index de l'image cliquée pour ouvrir la lightBox
-        const articles = document.querySelectorAll('.cardPhotos')
+        const articles = document.querySelectorAll('.cardPhotos .lightBox .cardImg')
         Array.from(articles).forEach((article, index) => {
             article.addEventListener('click', () => {
                 displayLightBoxModal(index);
             })
         })
+
+        totalLikes (photographMediaSelected)
+        
     }
 }
 const app = new App()
