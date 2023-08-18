@@ -43,7 +43,7 @@ a {
     text-decoration: none;
 }
 
-/* **************likes et tarif*********** */
+/* **************total likes page et tarif*********** */
 main h5 {
     margin: 0;
     display: flex;
@@ -67,19 +67,12 @@ main h5 .heart{
     align-items: center;
     gap: 2vw;
     margin-left: 15px;
-    cursor: pointer;
 }
-.nbLikesTotal:hover{
-    scale: 1.05;
-}
-.nbLikesTotal::after{
-    src: "./assets/heart-solid-black.svg";
-    /* content: "\002665"; */
-    font-size: 4.6vw;
-}
-/* ******************************************** */
 
-/* *************organisation de l'article********************* */
+/* ************************fin total likes page et tarif************************************* */
+
+/* ********************************organisation de l'article********************* */
+
 .photograph-header article :nth-child(1){order: 1;margin: 0;}
 .photograph-header article :nth-child(2){order: 2;}
 .photograph-header article :nth-child(3){order: 3;}
@@ -166,6 +159,9 @@ section article img, section article video {
     align-items: center;
     width: 100%;
     justify-content: space-between;
+}
+.cardText:hover{
+    scale: 1.05;
 }
 
 .cardText p, .cardText span, .cardTextLightBox {
