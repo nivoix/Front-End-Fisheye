@@ -354,6 +354,7 @@ form textarea {
     height: -webkit-fill-available;
 }
 
+
 .cardTextLightBox{
     display: flex;
     flex-direction: row;
@@ -362,9 +363,6 @@ form textarea {
     width: 100%;
     justify-content: space-between;
 }
-/************************Media modal end ******************************************/
-
-/*************************lightBox start *****************************************/
 
 .boxmedia article{
     display: none;
@@ -383,3 +381,5 @@ article.active{
         opacity: 1;
     }
 }
+
+/************************Media modal end ******************************************/

@@ -23,8 +23,8 @@ class mediasCard {
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
         this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
-		this.mediaElement.controls = false
-		this.mediaElement.autoplay = false
+		this.mediaElement.controls = true
+		/* this.mediaElement.autoplay = false */
                 
         //création du titre de l'image
         this.cardText = document.createElement('div')

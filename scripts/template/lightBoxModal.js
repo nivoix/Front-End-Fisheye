@@ -17,8 +17,8 @@ class lightBoxModal {
         this.mediaElement.className = "boxMediaElement"
         this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
-		this.mediaElement.controls = true
-		this.mediaElement.autoplay = false
+		this.mediaElement.controls = this._photos.video ? true : ""
+		/* this.mediaElement.autoplay = this._photos.video ? true : "" */
                 
         //création du titre de l'image
         this.cardText = document.createElement('div')

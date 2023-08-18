@@ -33,7 +33,7 @@ class App {
                 displayLightBoxModal(index);
             })
         })
-
+        //gestion des likes
         totalLikes (photographMediaSelected)
         
     }
