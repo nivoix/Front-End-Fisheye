@@ -1,14 +1,14 @@
-let likesdata = []
 
 
 // gestion du total de like 
-        //du photographe venant de la DB 
-        //et de chaque photo
+//du photographe venant de la DB 
+//et de chaque photo
 function totalLikes (data) {
     const displayTotalLike = document.querySelector('h5')
     const cardLikes = document.createElement('span')
     cardLikes.className = "nbLikesTotal"
     displayTotalLike.appendChild(cardLikes)
+    let likesdata = []
     //on récupère les likes de chaque image pour les mettre dans un tableau--> likes venant de la *******   DB   **********
     for(let i = 0 ; i < data.length; i++) {
         likesdata.push(data[i].likes)
@@ -16,10 +16,11 @@ function totalLikes (data) {
     // on additionne tous les likes du tableau
     const nblikesDataTotal = likesdata.reduce((a,c) => a+c, 0)
    // on affiche le nombre total de like sur la page
-    cardLikes.textContent = nblikesDataTotal 
-    
+    cardLikes.textContent = nblikesDataTotal
+    totalLikesCard(likesdata, cardLikes)
+}
 
-
+function totalLikesCard(likesdata, cardLikes) {
     //on récupère tous les coeurs vides de la page contenu dans "cardText"
     const allEmptyheart = document.querySelectorAll('.cardText')
     //on créé un tableau avec les coeurs et pour chacun d'entre eux on écoute le clic
@@ -37,7 +38,7 @@ function totalLikes (data) {
             }
         })
     })
-
+}
     function like(indexheart, heartsEmpty) {
         let likeValue = heartsEmpty[indexheart].value
         // incrémentation du nombre de likes du coeur avec l'index concerné
@@ -66,7 +67,7 @@ function totalLikes (data) {
         heartselect.setAttribute('src', './assets/heart-regular.svg')
     }
 
-}
+
 
 // incrémentation du total de like de la page
 function changeTotalLikes(cardLikes) {

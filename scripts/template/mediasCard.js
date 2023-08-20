@@ -7,10 +7,11 @@ class mediasCard {
         return this._photos
     }
 
-    createMediasCard(index) {       
+    createMediasCard() {       
         //création de la card
         this.cardPhotos = document.createElement('article');
         this.cardPhotos.className = "cardPhotos"
+        this.cardPhotos.setAttribute("id", this._photos.id)
         /* this.cardPhotos.id = index */
         this.link = document.createElement('a')
         /* this.link.setAttribute("href", "#") */
@@ -23,8 +24,6 @@ class mediasCard {
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
         this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
-		this.mediaElement.controls = true
-		/* this.mediaElement.autoplay = false */
                 
         //création du titre de l'image
         this.cardText = document.createElement('div')

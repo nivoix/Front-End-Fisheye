@@ -1,12 +1,13 @@
 // ecoute du bouton pour ouvrir la lightBox et masquer le reste de la page
 const LightBox = document.getElementById('mediaModal')
 // fonction d'ouverture de la modal des médias
-function displayLightBoxModal(index) {
+function displayLightBoxModal(code) {
     LightBox.style.display = "block";
     LightBox.style.visibility = "visible"
     LightBox.setAttribute("aria-hidden", false)
     pagecontent.style.visibility = "hidden"
-    launchLightBox(index)
+    launchLightBox(code)
+    window.scrollTo(0,180);
     
 }
 // fonction de fermeture de la modal des médias
@@ -20,6 +21,7 @@ function closeLightBoxModal() {
 }
 //Le parametre "code" vient de l'index de la photo selectionnée
 async function launchLightBox(code) {
+    console.log(code);
     const photosSectionLightBox = document.querySelector('.boxmedia')
     //recupération des données
     let params = new URL(document.location).searchParams
@@ -37,6 +39,7 @@ async function launchLightBox(code) {
     })
     //recherche de la photo et de son titre selectionnée pour l'affichée en première
     let imgselect = document.getElementById(`${code}`)
+    console.log(imgselect);
     imgselect.classList.add('active')
     
     //implémentation des boutons next et previous///////////////////////////////////////////////

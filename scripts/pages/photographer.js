@@ -1,7 +1,7 @@
 class App {
     constructor() {
     this.$photographSection = document.querySelector(".photograph-header")
-    this.$photosSection = document.querySelector('.photosSection')
+    
     
     this.photographApi = new PhotographerApi(`./data/photographers.json`)
     }
@@ -18,36 +18,23 @@ class App {
             const Template = new photographCard(photographdata)
             this.$photographSection.appendChild(Template.createPhotographCard())
         })
-        // récupération et médias du photographe sélectionné
+        // récupération des médias du photographe sélectionné
         const allMediasPhotographers = photographData.media
         const photographMediaSelected = allMediasPhotographers.filter((photographer) => photographer.photographerId == photographerId)
-                
-        photographMediaSelected.forEach((media) => {
-            const Template = new mediasCard(media)
-            this.$photosSection.appendChild(Template.createMediasCard())
-        })
-        //récupération de l'index de l'image cliquée pour ouvrir la lightBox
-        const articles = document.querySelectorAll('.cardPhotos .lightBox .cardImg')
-        Array.from(articles).forEach((article, index) => {
-            article.addEventListener('click', () => {
-                displayLightBoxModal(index);
-            })
-        })
-        //gestion des likes
-        totalLikes (photographMediaSelected)
         
+        renderMediaCard(photographMediaSelected)
+        //récupération de l'index de l'image cliquée pour ouvrir la lightBox
+        checkIndexImageSelected()
+        //gestion des likes
+        totalLikes(photographMediaSelected)
+        //gestion du tri des cards
+        const selected = document.querySelector('select')
+        selected.addEventListener('change', (e) => {
+            filterOption(photographMediaSelected, e)
+        })
     }
 }
 const app = new App()
 app.main()
 
-
-
-//pour les likes//////////////////////////////////
-/* let totalLike = 0;
-
-  const displaylikes = medias.map((media) => {
-    totalLike += media.likes;
-    document.querySelector("#totalLike").innerHTML = totalLike;
-  });
-} */
+ 
