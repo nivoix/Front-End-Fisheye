@@ -1,27 +1,27 @@
 const modal = document.getElementById("contact_modal");
 const areamodal = document.querySelector('.modal')
+const pagecontent = document.querySelector("main")
+
 //fonction d'ouverture de la modal de contact
-function displayModal() {
+async function displayModal() {
 	modal.style.display = "flex";
     modal.setAttribute("aria-hidden", false)
+    pagecontent.setAttribute("aria-hidden", true)
     pagecontent.style.visibility = "hidden"
+    
 }
 // fonction de fermeture de la modal de contact
 function closeModal() {
-    /* const modal = document.getElementById("contact_modal"); */
+    const theArtisteName = document.getElementById('theArtisteName')
+    console.log(theArtisteName);
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", true);
     pagecontent.style.visibility = "visible"
     pagecontent.setAttribute("aria-hidden", false)
+    theArtisteName.remove()
 }
 
-// ecoute du bouton pour ouvrir la modal et masquer le reste de la page
-const openModal = document.querySelector(".photograph-header button")
-const pagecontent = document.querySelector("main")
-openModal.addEventListener("click", () => {
-    pagecontent.setAttribute("aria-hidden", true)
-    displayModal()
-})
+
 
 // fonction de récupération de la saisie lors de la soumission du formulaire
 const sendModal = document.querySelector("form button")

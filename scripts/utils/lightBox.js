@@ -21,7 +21,6 @@ function closeLightBoxModal() {
 }
 //Le parametre "code" vient de l'index de la photo selectionnée
 async function launchLightBox(code) {
-    console.log(code);
     const photosSectionLightBox = document.querySelector('.boxmedia')
     //recupération des données
     let params = new URL(document.location).searchParams
@@ -60,7 +59,6 @@ async function launchLightBox(code) {
             count = nbslides-1
         }
         images[count].classList.add('active')
-        console.log(count);
     }
     precedent.addEventListener('click', previous)
     // bouton next/////////:
@@ -89,4 +87,5 @@ async function launchLightBox(code) {
     document.addEventListener('keydown', keyPress)
     ///////////////////////////////////////////////////////////////////////////////
 }
+
 

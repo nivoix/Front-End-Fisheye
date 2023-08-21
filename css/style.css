@@ -47,7 +47,7 @@ a {
     text-decoration: none;
     text-align: center;
 }
-a:hover {
+a:hover, a:focus {
     scale: 1.05;
     background-color: #e38570;
     border-radius: 10%;

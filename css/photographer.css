@@ -108,14 +108,14 @@ main h5 .heart{
     background-color: #FAFAFA;
     height: auto;
     margin: 0;
-    margin-inline: 100px;
+    margin-inline: 67px;
     display: flex;
     position: absolute;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap: 10%;
+    gap: 9%;
     width: 87%;
 }
 /* ********************organisation du header de la page photographe ARTICLE / BTN CONTACT / PORTRAIT *****************************/
@@ -148,6 +148,9 @@ label {
     color: white;
     font-size: 2.6vw;
 }
+#select:hover, #select:focus {
+    scale: 1.04;
+}
 select option{
     border-bottom: 2px solid white;
 }
@@ -165,8 +168,6 @@ section {
 }
 section article {
     width: 100%;
-}
-section article a {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -176,6 +177,12 @@ section article a {
 .cardImg {
     width: 100%;
     height: 95%;
+}
+.cardImg{
+    cursor: pointer;
+}
+.cardImg:hover, .cardImg:focus {
+    scale: 1.05;
 }
 section article img, section article video {
     object-fit: cover;
@@ -191,7 +198,7 @@ section article img, section article video {
     width: 100%;
     justify-content: space-between;
 }
-.cardText:hover{
+.cardText:hover, .cardText:focus {
     scale: 1.05;
 }
 
@@ -211,7 +218,7 @@ section article img, section article video {
     gap: 7px;
     cursor: pointer;
 }
-.cardText span:hover{
+.cardText span:hover, .cardText span:focus {
     scale: 1.14;
 }
 .heart{
@@ -233,7 +240,7 @@ section article img, section article video {
     border-radius: 5px;
     cursor: pointer;
 }
-.contact_button:hover {
+.contact_button:hover, .contact_button:focus {
     scale: 1.07;
 }
 #contact_modal{
@@ -262,10 +269,10 @@ section article img, section article video {
     cursor: pointer;
     width: 4vw;
 }
-.btn_close{
+.btn_close:focus{
     width: 3vw;
 }
-.btn_close:hover {
+.btn_close:hover, .btn_close:focus {
     scale: 1.4;
 }
 
@@ -322,12 +329,7 @@ form textarea {
 }
 /* ********************************MODAL FORMULAIRE DE CONTACT END*********************** */
 /* ******************************MODAL MEDIA LIGHTBOX START **************************/
-.lightBox .cardImg{
-    cursor: pointer;
-}
-.lightBox .cardImg:hover {
-    scale: 1.05;
-}
+
 #mediaModal {
     width: 45vw;
     height: 45vw;
@@ -359,7 +361,7 @@ form textarea {
     cursor: pointer;
 }
 
-#left-arrow:hover, #right-arrow:hover {
+#left-arrow:hover, #right-arrow:hover, #left-arrow:focus, #right-arrow:focus {
     scale: 1.1;
     color: red;
 }

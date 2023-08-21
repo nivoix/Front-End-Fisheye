@@ -13,6 +13,7 @@ class photographerCard {
         this.link = document.createElement( 'a' );
         this.link.href= './photographer.html?id=' + `${this._photographe.id}`;
         this.link.ariaLabel = "En savoir plus sur ce photographe";
+        this.link.setAttribute("role","link")
         // création de l'image
         this.img = document.createElement( 'img' );
         this.img.setAttribute("src", picture)

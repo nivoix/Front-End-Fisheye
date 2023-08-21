@@ -22,6 +22,15 @@ class App {
         const allMediasPhotographers = photographData.media
         const photographMediaSelected = allMediasPhotographers.filter((photographer) => photographer.photographerId == photographerId)
         
+        // ecoute du bouton pour ouvrir la modal et masquer le reste de la page
+        // et insertion du nom du photographe sur le titre de la modal de contact
+        const openModal = document.querySelector(".photograph-header button")
+        const title = document.querySelector('.modal header h1')
+        openModal.addEventListener("click", () => {
+            displayModal(photographeSelected)
+            title.insertAdjacentHTML('beforeend',`<div id="theArtisteName">${photographeSelected[0].name}</div>`)
+        })
+
         renderMediaCard(photographMediaSelected)
         //récupération de l'index de l'image cliquée pour ouvrir la lightBox
         checkIndexImageSelected()
@@ -31,7 +40,12 @@ class App {
         const selected = document.querySelector('select')
         selected.addEventListener('change', (e) => {
             filterOption(photographMediaSelected, e)
+            
         })
+
+        keypressOption(photographMediaSelected)
+        keypressImages()
+        keypressHeart(photographMediaSelected)
     }
 }
 const app = new App()

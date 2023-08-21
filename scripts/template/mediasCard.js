@@ -12,11 +12,6 @@ class mediasCard {
         this.cardPhotos = document.createElement('article');
         this.cardPhotos.className = "cardPhotos"
         this.cardPhotos.setAttribute("id", this._photos.id)
-        /* this.cardPhotos.id = index */
-        this.link = document.createElement('a')
-        /* this.link.setAttribute("href", "#") */
-        /* this.link.setAttribute("onclick", "displayLightBoxModal()") */
-        this.link.className = "lightBox"
         //création de la carte de l'image du média
         this.cardImg = document.createElement('div')
         this.cardImg.className = "cardImg"
@@ -24,7 +19,9 @@ class mediasCard {
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
         this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`
 		this.mediaElement.alt = this._photos.video ? this._photos.describVideo : this._photos.title
-                
+        this.mediaElement.setAttribute('role','link')        
+        this.mediaElement.setAttribute('aria-labelledby','closeup view')
+        this.mediaElement.setAttribute("tabindex", "0")
         //création du titre de l'image
         this.cardText = document.createElement('div')
         this.cardText.className = "cardText"
@@ -40,13 +37,16 @@ class mediasCard {
         this.heart = document.createElement('img')
         this.heart.className = "heart"
         this.heart.setAttribute("src","./assets/heart-regular.svg") 
-
-        this.cardPhotos.appendChild(this.link)
-
-        this.link.appendChild(this.cardImg)
+        this.heart.setAttribute('alt','likes')
+        this.heart.setAttribute("tabindex", "0")
+        /* this.cardPhotos.appendChild(this.link) */
+        this.cardPhotos.appendChild(this.cardImg)
+        this.cardPhotos.appendChild(this.cardText)
+        
+        /* this.link.appendChild(this.cardImg) */
         this.cardImg.appendChild(this.mediaElement)
         
-        this.link.appendChild(this.cardText)
+        /* this.link.appendChild(this.cardText) */
         this.cardText.appendChild(this.titlephoto)
         this.cardText.appendChild(this.nblikes)
         this.cardText.appendChild(this.heart)

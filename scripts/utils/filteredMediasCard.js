@@ -1,35 +1,43 @@
-/* selected = document.querySelector('select')
-console.log(selected); */
-
 
 function filterOption(datas, e) {
-            if(e.target.value === "popularité") {
-                console.log('je suis pop');    
-                datas.sort((a, b) => b.likes - a.likes);
-            }else if(e.target.value === "date") {
-                console.log('je suis date')
-                datas.sort((a, b) => new Date(a.date)- new Date(b.date));
-            }else if(e.target.value === "titre"){
-                console.log('je suis titre')
-                datas.sort((a, b) => {
-                    if (a.title < b.title) {
-                        return -1;
-                    }
-                    if (a.title > b.title) {
-                        return 1;
-                    }
-                    return 0;
-                });
+    //classement par popularité
+    if(e.target.value === "popularité") {
+        // du plus pop au moins pop   
+        datas.sort((a, b) => b.likes - a.likes);
+    //classement par date
+    }else if(e.target.value === "date") {
+        // du plus récent au plus ancien
+        datas.sort((a, b) => new Date(a.date)- new Date(b.date));
+    //classement alphabétique des titres    
+    }else if(e.target.value === "titre"){
+        datas.sort((a, b) => {
+            if (a.title < b.title) {
+                return -1;
             }
-            articles = document.querySelectorAll('.cardPhotos')
-            Array.from(articles).forEach(articl => {
-                articl.remove()
-            });
-            likeTotal =document.querySelector('.nbLikesTotal')
-            likeTotal.remove()
-            renderMediaCard(datas)
-            checkIndexImageSelected()
-            totalLikes(datas)
+            if (a.title > b.title) {
+                return 1;
+            }
+            return 0;
+        });
+        
+    }
+
+    
+    // après la sélection de l'option de tri
+    ///////// il faut supprimer tous les container "articles"
+    articles = document.querySelectorAll('.cardPhotos')
+    Array.from(articles).forEach(articl => {
+        articl.remove()
+    });
+    //////// il faut supprimer le total de like afin qu'il ne s'affiche pas en double
+    likeTotal =document.querySelector('.nbLikesTotal')
+    likeTotal.remove()
+    /////// il faut re-render les card
+    renderMediaCard(datas)
+    /////// il faut retrouver l'index de l'image sélectionnée
+    checkIndexImageSelected()
+    /////// il faut re-calculer le total des likes
+    totalLikes(datas)
     
 }
     

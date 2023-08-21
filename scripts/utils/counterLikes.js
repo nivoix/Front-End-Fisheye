@@ -1,5 +1,4 @@
 
-
 // gestion du total de like 
 //du photographe venant de la DB 
 //et de chaque photo
@@ -18,6 +17,8 @@ function totalLikes (data) {
    // on affiche le nombre total de like sur la page
     cardLikes.textContent = nblikesDataTotal
     totalLikesCard(likesdata, cardLikes)
+    // gestion de la selection de l'image par le keyboard
+    
 }
 
 function totalLikesCard(likesdata, cardLikes) {
@@ -30,14 +31,16 @@ function totalLikesCard(likesdata, cardLikes) {
             const heartsEmpty = document.querySelectorAll('.nblikes')
             // condition si like ou dislike
             if((heartsEmpty[indexheart].value) == (likesdata[indexheart])){
-                like(indexheart, heartsEmpty)
-                changeTotalLikes(cardLikes)
+                   like(indexheart, heartsEmpty)
+                   changeTotalLikes(cardLikes)
+               
             }else if(heartsEmpty[indexheart].value > likesdata[indexheart]){
-                disLike(indexheart,heartsEmpty)
-                changeTotalLikes(cardLikes)
+                    disLike(indexheart,heartsEmpty)
+                    changeTotalLikes(cardLikes)
             }
         })
     })
+    
 }
     function like(indexheart, heartsEmpty) {
         let likeValue = heartsEmpty[indexheart].value
