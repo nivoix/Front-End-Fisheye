@@ -35,29 +35,29 @@
           <img src="./assets/icons/xmark-solid.svg" class="btn_close" onclick="closeModal()" aria-label="bouton de fermeture" alt="icone de fermeture de la modal" tabindex="0"/>
         </header>
 				<form>
-					<div class="form">
-            <div class="prenom">
+					<div class="form" id="contactForm">
+            <div class="prenom" id="prenom_form">
                 <label for="prenom">Prénom</label>
-                <input type="text" name="prenom" id="prenom" aria-labelledby="first name" placeholder="Quel est votre prénom ?" aria-required="true" aria-invalid="true"/>
+                <input type="text" name="prenom" id="prenom" aria-labelledby="contactForm prenom_form prenom" placeholder="Quel est votre prénom ?" aria-required="true" aria-invalid="true"/>
                 <div class="messageInfoprenom"></div>
             </div>
-            <div class="nom">
+            <div class="nom" id="nom_form">
                 <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" aria-labelledby="last name" placeholder="Quel est votre nom ?" aria-required="true" aria-invalid="true"/>
+                <input type="text" name="nom" id="nom" aria-labelledby="contactForm nom_form nom" placeholder="Quel est votre nom ?" aria-required="true" aria-invalid="true"/>
                 <div class="messageInfonom"></div>
             </div>
-           <div class="email">
+           <div class="email" id="email_form">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" aria-labelledby="Email" placeholder="Quel est votre email ?" aria-required="true" aria-invalid="true"/>
+              <input type="email" name="email" id="email" aria-labelledby="contactForm email_form email" placeholder="Quel est votre email ?" aria-required="true" aria-invalid="true"/>
               <div class="messageInfoemail"></div>
             </div>
-            <div class="message">
+            <div class="message" id="message_form">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" row="4" cols="10" aria-labelledby="Your message" placeholder="Quel est votre message ?" aria-required="true" aria-invalid="true"></textarea>
+                <textarea name="message" id="message" row="4" cols="10" aria-labelledby="contactForm message_form message" placeholder="Quel est votre message ?" aria-required="true" aria-invalid="true"></textarea>
                 <div class="messageInfomessage"></div>              
             </div>
           </div>
-          <button type="submit" class="contact_button" title="envoyer" role="button" aria-labelledby="send">Envoyer</button>
+          <button type="submit" class="contact_button" title="envoyer" role="button" aria-labelledby="envoyer">Envoyer</button>
 				</form>
 			</div>
 		</div>
