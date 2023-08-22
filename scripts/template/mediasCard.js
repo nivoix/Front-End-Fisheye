@@ -11,10 +11,10 @@ class mediasCard {
         //création de la card
         this.cardPhotos = document.createElement('article');
         this.cardPhotos.className = "cardPhotos"
-        this.cardPhotos.setAttribute("id", this._photos.id)
         //création de la carte de l'image du média
         this.cardImg = document.createElement('div')
         this.cardImg.className = "cardImg"
+        this.cardImg.setAttribute("id", this._photos.id)
         // choix des balises, des sources et des titres en fonction du média
         this.mediaElement = this._photos.video ? document.createElement('video') : document.createElement('img')
         this.mediaElement.src = `./assets/images/${this._photos.photographerId}/${this._photos.video || this._photos.image}`

@@ -13,7 +13,6 @@ async function displayModal() {
 // fonction de fermeture de la modal de contact
 function closeModal() {
     const theArtisteName = document.getElementById('theArtisteName')
-    console.log(theArtisteName);
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", true);
     pagecontent.style.visibility = "visible"

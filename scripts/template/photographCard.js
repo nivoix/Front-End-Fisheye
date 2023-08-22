@@ -37,6 +37,8 @@ class photographCard {
         this.img = document.createElement('img');
         this.img.setAttribute("src", picture)
         this.img.setAttribute("alt", "protrait du photographe" + `${this._photograph.name}`)
+        this.img.setAttribute("width", "150px")
+        this.img.setAttribute("height", "150px")
 
         photographHeader.appendChild(this.article)
 

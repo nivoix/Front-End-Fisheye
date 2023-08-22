@@ -40,9 +40,7 @@ async function launchLightBox(id) {
     let imgselectAll = document.querySelectorAll(`.boxmedia article`)
     let imgselect = Array.from(imgselectAll).find((img) =>img.id == id)
     let imgselectindex = Array.from(imgselectAll).findIndex((img) =>img.id == id)
-    
-    console.log(imgselect);
-    console.log(imgselectindex);
+
     imgselect.classList.add('active')
     
     //implémentation des boutons next et previous///////////////////////////////////////////////
@@ -51,9 +49,6 @@ async function launchLightBox(id) {
     const images = document.querySelectorAll('.boxmedia article')
     const nbslides = images.length
     let imgactive = document.querySelector('.active')
-    console.log(imgactive);
-    console.log(imgactive.id);
-    console.log(imgselect.index);
     let count = imgselectindex
     // bouton previous///////////////////////////////////////////
     function previous () {
@@ -75,7 +70,6 @@ async function launchLightBox(id) {
             count = 0
         }
         images[count].classList.add('active')
-        console.log(count);
     }
     suivant.addEventListener('click', next)
     // boutons clavier//////////////////:

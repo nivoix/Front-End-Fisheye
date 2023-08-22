@@ -18,6 +18,8 @@ class photographerCard {
         this.img = document.createElement( 'img' );
         this.img.setAttribute("src", picture)
         this.img.setAttribute("alt", "protrait du photographe" + `${this._photographe.name}`)
+        this.img.setAttribute("width", "200px")
+        this.img.setAttribute("height", "200px")
         //création du nom du photographe
         this.h2 = document.createElement( 'h2' );
         this.h2.id = "name";
