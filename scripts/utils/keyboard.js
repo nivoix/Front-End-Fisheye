@@ -13,7 +13,7 @@ for(let i = 0; i < buttonClose.length; i++) {
 }
 
 
-function keypressOption(data) {
+/* function keypressOption(data) {
     const select =document.querySelector('select')
     const options = document.querySelector('select option')
     options.addEventListener('keydown', (e) => {
@@ -22,14 +22,15 @@ function keypressOption(data) {
             filterOption(data, e)
         }
     })
-}
+} */
 
 function keypressImages() {
     const images =document.querySelectorAll('.cardPhotos .cardImg ')
     for(let a = 0; a< images.length; a++) {
         images[a].addEventListener('keydown', (e) => {
             if(e.keyCode === 13) {
-                displayLightBoxModal(a);
+                console.log(images[a].id)
+                displayLightBoxModal(images[a].id);
             }
         })
     }

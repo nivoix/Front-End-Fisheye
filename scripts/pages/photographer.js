@@ -43,7 +43,7 @@ class App {
             
         })
 
-        keypressOption(photographMediaSelected)
+        /* keypressOption(photographMediaSelected) */
         keypressImages()
         keypressHeart(photographMediaSelected)
     }
