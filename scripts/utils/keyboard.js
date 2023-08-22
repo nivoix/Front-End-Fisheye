@@ -48,9 +48,7 @@ function keypressHeart(data) {
     const allEmptyheart = document.querySelectorAll('.cardText')
     Array.from(allEmptyheart).forEach((emptyheart, indexheart) => {
         emptyheart.addEventListener('keydown', (e) => {
-            console.log('suis la?????,');
             if(e.keyCode === 13) {
-                console.log("puis ici");
                 const heartsEmpty = document.querySelectorAll('.nblikes')
                 // condition si like ou dislike
                 if((heartsEmpty[indexheart].value) == (likesdata[indexheart])){

@@ -38,6 +38,7 @@ function filterOption(datas, e) {
     checkIdImageSelected()
     /////// il faut re-calculer le total des likes
     totalLikes(datas)
-    
+    keypressImages()
+    keypressHeart(datas)
 }
     
