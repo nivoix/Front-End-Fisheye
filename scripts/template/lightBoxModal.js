@@ -9,7 +9,8 @@ class lightBoxModal {
 
     createLightBoxModal(count) {
         this.cardPhoto = document.createElement('article')
-        this.cardPhoto.id = count  
+        this.cardPhoto.setAttribute("id", this._photos.id)  
+        this.cardPhoto.setAttribute("index", count)  
         this.cardImg = document.createElement('figure')
         this.cardImg.className = "cardImgLightBox"
 

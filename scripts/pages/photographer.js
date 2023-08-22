@@ -33,7 +33,7 @@ class App {
 
         renderMediaCard(photographMediaSelected)
         //récupération de l'index de l'image cliquée pour ouvrir la lightBox
-        checkIndexImageSelected()
+        checkIdImageSelected()
         //gestion des likes
         totalLikes(photographMediaSelected)
         //gestion du tri des cards

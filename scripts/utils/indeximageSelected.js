@@ -1,9 +1,9 @@
-function checkIndexImageSelected() {
-    const images = document.querySelectorAll('.cardPhotos .cardImg ')
-    Array.from(images).forEach((image, index) => {
+function checkIdImageSelected() {
+    const images = document.querySelectorAll('.cardPhotos')
+    Array.from(images).forEach((image) => {
         image.addEventListener('click', () => {
-            
-            displayLightBoxModal(index);
+            let id = image.id
+            displayLightBoxModal(id);
         })
     })
 }

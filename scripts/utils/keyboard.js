@@ -2,7 +2,6 @@
 
 // activation de la fermeture de la modal lors de la pression du bouton ENTER
 const buttonClose = document.querySelectorAll('.btn_close')
-console.log(buttonClose);
 
 for(let i = 0; i < buttonClose.length; i++) {
     buttonClose[i].onkeydown = (e) => {
@@ -17,7 +16,6 @@ for(let i = 0; i < buttonClose.length; i++) {
 function keypressOption(data) {
     const select =document.querySelector('select')
     const options = document.querySelector('select option')
-    console.log(options);
     options.addEventListener('keydown', (e) => {
         e.preventDefault()
         if(e.keyCode === 13){
@@ -28,7 +26,6 @@ function keypressOption(data) {
 
 function keypressImages() {
     const images =document.querySelectorAll('.cardPhotos .cardImg ')
-    console.log(images);
     for(let a = 0; a< images.length; a++) {
         images[a].addEventListener('keydown', (e) => {
             if(e.keyCode === 13) {

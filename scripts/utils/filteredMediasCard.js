@@ -35,7 +35,7 @@ function filterOption(datas, e) {
     /////// il faut re-render les card
     renderMediaCard(datas)
     /////// il faut retrouver l'index de l'image sélectionnée
-    checkIndexImageSelected()
+    checkIdImageSelected()
     /////// il faut re-calculer le total des likes
     totalLikes(datas)
     

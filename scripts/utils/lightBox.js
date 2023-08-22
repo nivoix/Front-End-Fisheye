@@ -1,12 +1,12 @@
 // ecoute du bouton pour ouvrir la lightBox et masquer le reste de la page
 const LightBox = document.getElementById('mediaModal')
 // fonction d'ouverture de la modal des médias
-function displayLightBoxModal(code) {
+function displayLightBoxModal(id) {
     LightBox.style.display = "block";
     LightBox.style.visibility = "visible"
     LightBox.setAttribute("aria-hidden", false)
     pagecontent.style.visibility = "hidden"
-    launchLightBox(code)
+    launchLightBox(id)
     window.scrollTo(0,180);
     
 }
@@ -20,7 +20,7 @@ function closeLightBoxModal() {
 
 }
 //Le parametre "code" vient de l'index de la photo selectionnée
-async function launchLightBox(code) {
+async function launchLightBox(id) {
     const photosSectionLightBox = document.querySelector('.boxmedia')
     //recupération des données
     let params = new URL(document.location).searchParams
@@ -37,8 +37,12 @@ async function launchLightBox(code) {
         photosSectionLightBox.appendChild(Template.createLightBoxModal(count))
     })
     //recherche de la photo et de son titre selectionnée pour l'affichée en première
-    let imgselect = document.getElementById(`${code}`)
+    let imgselectAll = document.querySelectorAll(`.boxmedia article`)
+    let imgselect = Array.from(imgselectAll).find((img) =>img.id == id)
+    let imgselectindex = Array.from(imgselectAll).findIndex((img) =>img.id == id)
+    
     console.log(imgselect);
+    console.log(imgselectindex);
     imgselect.classList.add('active')
     
     //implémentation des boutons next et previous///////////////////////////////////////////////
@@ -49,7 +53,8 @@ async function launchLightBox(code) {
     let imgactive = document.querySelector('.active')
     console.log(imgactive);
     console.log(imgactive.id);
-    let count = imgactive.id
+    console.log(imgselect.index);
+    let count = imgselectindex
     // bouton previous///////////////////////////////////////////
     function previous () {
         images[count].classList.remove('active')
