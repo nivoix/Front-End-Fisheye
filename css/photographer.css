@@ -149,8 +149,9 @@ label {
     font-size: 2.6vw;
 }
 #select:hover, #select:focus {
-    scale: 1.04;
+    transform: scale(1.04);
 }
+
 select option{
     border-bottom: 2px solid white;
 }
@@ -182,7 +183,7 @@ section article {
     cursor: pointer;
 }
 .cardImg:hover, .cardImg:focus {
-    scale: 1.05;
+    transform: scale(1.05);
 }
 section article img, section article video {
     object-fit: cover;
@@ -199,7 +200,7 @@ section article img, section article video {
     justify-content: space-between;
 }
 .cardText:hover, .cardText:focus {
-    scale: 1.05;
+    transform: scale(1.05);
 }
 
 .cardText p, .cardText span, .cardTextLightBox {
@@ -219,7 +220,7 @@ section article img, section article video {
     cursor: pointer;
 }
 .cardText span:hover, .cardText span:focus {
-    scale: 1.14;
+    transform: scale(1.14);
 }
 .heart{
     color: #901C1C;
@@ -241,7 +242,7 @@ section article img, section article video {
     cursor: pointer;
 }
 .contact_button:hover, .contact_button:focus {
-    scale: 1.07;
+    transform: scale(1.07);
 }
 #contact_modal{
     justify-content: center;
@@ -273,7 +274,7 @@ section article img, section article video {
     width: 3vw;
 }
 .btn_close:hover, .btn_close:focus {
-    scale: 1.4;
+    transform: scale(1.4);
 }
 
 .modal header h2 {
@@ -362,7 +363,7 @@ form textarea {
 }
 
 #left-arrow:hover, #right-arrow:hover, #left-arrow:focus, #right-arrow:focus {
-    scale: 1.1;
+    transform: scale(1.1);
     color: red;
 }
 
