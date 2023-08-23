@@ -1,5 +1,3 @@
-
-
 // activation de la fermeture de la modal lors de la pression du bouton ENTER
 const buttonClose = document.querySelectorAll('.btn_close')
 
@@ -13,8 +11,7 @@ for(let i = 0; i < buttonClose.length; i++) {
 }
 
 
-/* function keypressOption(data) {
-    const select =document.querySelector('select')
+function keypressOption(data) {
     const options = document.querySelector('select option')
     options.addEventListener('keydown', (e) => {
         e.preventDefault()
@@ -22,7 +19,7 @@ for(let i = 0; i < buttonClose.length; i++) {
             filterOption(data, e)
         }
     })
-} */
+}
 
 function keypressImages() {
     const images =document.querySelectorAll('.cardPhotos .cardImg ')
@@ -38,10 +35,9 @@ function keypressImages() {
 
 
 function keypressHeart(data) {
-
     let cardLikes = document.querySelector('h5 span')
     let likesdata = []
-    //on récupère les likes de chaque image pour les mettre dans un tableau--> likes venant de la *******   DB   **********
+    //on récupère les likes de chaque image pour les mettre dans un tableau--> likes venant de la **   DB  **********
     for(let i = 0 ; i < data.length; i++) {
         likesdata.push(data[i].likes)
     }
@@ -51,7 +47,7 @@ function keypressHeart(data) {
             if(e.keyCode === 13) {
                 const heartsEmpty = document.querySelectorAll('.nblikes')
                 // condition si like ou dislike
-                if((heartsEmpty[indexheart].value) == (likesdata[indexheart])){
+                if((heartsEmpty[indexheart].value) === (likesdata[indexheart])){
                     like(indexheart, heartsEmpty)
                     changeTotalLikes(cardLikes)
                     
@@ -63,4 +59,3 @@ function keypressHeart(data) {
         })
     })
 }
-

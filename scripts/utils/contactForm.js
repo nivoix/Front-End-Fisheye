@@ -1,10 +1,9 @@
 const modal = document.getElementById("contact_modal");
-const areamodal = document.querySelector('.modal')
 const pagecontent = document.querySelector("main")
 
 //fonction d'ouverture de la modal de contact
 async function displayModal() {
-	modal.style.display = "flex";
+    modal.style.display = "flex";
     modal.setAttribute("aria-hidden", false)
     pagecontent.setAttribute("aria-hidden", true)
     pagecontent.style.visibility = "hidden"
@@ -19,7 +18,14 @@ function closeModal() {
     pagecontent.setAttribute("aria-hidden", false)
     theArtisteName.remove()
 }
-
+function openModalContactForm(photographeSelected) {
+    const openModal = document.querySelector(".photograph-header button")
+    const title = document.querySelector('.modal header h1')
+    openModal.addEventListener("click", () => {
+        displayModal(photographeSelected)
+        title.insertAdjacentHTML('beforeend',`<div id="theArtisteName">${photographeSelected[0].name}</div>`)
+    })
+}
 
 
 // fonction de récupération de la saisie lors de la soumission du formulaire

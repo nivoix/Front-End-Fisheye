@@ -14,7 +14,7 @@ function totalLikes (data) {
     }
     // on additionne tous les likes du tableau
     const nblikesDataTotal = likesdata.reduce((a,c) => a+c, 0)
-   // on affiche le nombre total de like sur la page
+    // on affiche le nombre total de like sur la page
     cardLikes.textContent = nblikesDataTotal
     totalLikesCard(likesdata, cardLikes)
     // gestion de la selection de l'image par le keyboard

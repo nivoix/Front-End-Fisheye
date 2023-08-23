@@ -25,7 +25,7 @@ async function launchLightBox(id) {
     //recupération des données
     let params = new URL(document.location).searchParams
     let photographerId = params.get("id")
-    datasurl = new PhotographerApi(`./data/photographers.json`)
+    let datasurl = new PhotographerApi(`./data/photographers.json`)
     const data = await datasurl.get()
     //recupération des données spécifiques aux médias
     const mediadata = data.media
@@ -38,8 +38,8 @@ async function launchLightBox(id) {
     })
     //recherche de la photo et de son titre selectionnée pour l'affichée en première
     let imgselectAll = document.querySelectorAll(`.boxmedia article`)
-    let imgselect = Array.from(imgselectAll).find((img) =>img.id == id)
-    let imgselectindex = Array.from(imgselectAll).findIndex((img) =>img.id == id)
+    let imgselect = Array.from(imgselectAll).find((img) =>img.id === id)
+    let imgselectindex = Array.from(imgselectAll).findIndex((img) =>img.id === id)
 
     imgselect.classList.add('active')
     
@@ -48,7 +48,6 @@ async function launchLightBox(id) {
     const suivant = document.getElementById('right-arrow')
     const images = document.querySelectorAll('.boxmedia article')
     const nbslides = images.length
-    let imgactive = document.querySelector('.active')
     let count = imgselectindex
     // bouton previous///////////////////////////////////////////
     function previous () {
@@ -86,5 +85,3 @@ async function launchLightBox(id) {
     document.addEventListener('keydown', keyPress)
     ///////////////////////////////////////////////////////////////////////////////
 }
-
-

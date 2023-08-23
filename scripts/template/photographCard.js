@@ -2,11 +2,9 @@ class photographCard {
     constructor(photograph) {
         this._photograph = photograph
     }
-
     get photograph() {
         return this._photograph
     }
-    
     createPhotographCard() {
         const picture = `./assets/images/${this._photograph.portrait}`;
         const main = document.querySelector("main")
@@ -33,34 +31,21 @@ class photographCard {
         this.heart = document.createElement('img')
         this.heart.className = "heart"
         this.heart.setAttribute('src', './assets/heart-solid-black.svg')
+        this.heart.setAttribute('id', 'heart')
         // création de l'image
         this.img = document.createElement('img');
         this.img.setAttribute("src", picture)
         this.img.setAttribute("alt", "protrait du photographe" + `${this._photograph.name}`)
         this.img.setAttribute("width", "150px")
         this.img.setAttribute("height", "150px")
-
         photographHeader.appendChild(this.article)
-
         this.article.appendChild(this.h1);
         this.article.appendChild(this.h3);
         this.article.appendChild(this.tag);
-
         photographHeader.appendChild(this.img);
-        
         main.appendChild(this.rate);
-
         this.rate.appendChild(this.heart)
 
         return this.article;
-        }
+    }
 }
-
-/* function getImagesLightBox (data) {
-    const cardImgLightBox = document.getElementById('mediaModal')
-    
-    const {image, video} = data
-    console.log(data);
-    console.log(image);
-    console.log(video);
-} */

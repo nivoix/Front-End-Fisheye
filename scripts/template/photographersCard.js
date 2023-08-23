@@ -45,6 +45,6 @@ class photographerCard {
         this.article.appendChild(this.tag);
         this.article.appendChild(this.rate);
 
-    return this.article;
+        return this.article;
     }
 }
