@@ -34,7 +34,7 @@ function closeTheModal() {
     })
 }
 export { closeTheModal }
-
+//ouverture de la modal de contact
 function openModalContactForm(photographeSelected) {
     const openModal = document.querySelector(".photograph-header button")
     const title = document.querySelector('.modal header h1')

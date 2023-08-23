@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { Api } from "../api/api.js";
 import { lightBoxModal } from "../template/lightBoxModal.js"
 import { pagecontent } from "./contactForm.js";

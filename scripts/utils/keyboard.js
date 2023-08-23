@@ -1,18 +1,15 @@
 import { filterOption } from "./filteredMediasCard.js";
-import { displayLightBoxModal } from "./lightBox.js";
-import { like } from "./counterLikes.js";
-import { disLike } from "./counterLikes.js";
-import { changeTotalLikes } from "./counterLikes.js";
+import { displayLightBoxModal, closeLightBoxModal } from "./lightBox.js";
+import { like, disLike, changeTotalLikes } from "./counterLikes.js";
+import { closeModal } from "./contactForm.js";
 
 // activation de la fermeture de la modal lors de la pression du bouton ENTER
 const buttonClose = document.querySelectorAll('.btn_close')
-
 for(let i = 0; i < buttonClose.length; i++) {
     buttonClose[i].onkeydown = (e) => {
-        if (e.keyCode === 13) {
-            // The Enter/Return key
-            document.activeElement.onclick();
-        }
+        if(e.target.id === "btn_close_contact" && e.keyCode === 13) {
+            closeModal()
+        }else closeLightBoxModal()
     }    
 }
 
