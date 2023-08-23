@@ -9,7 +9,7 @@ class Api {
             .catch(err => console.log('une erreur est survenue', err))
     }
 }
-class PhotographerApi extends Api {
+export class PhotographerApi extends Api {
     constructor(url) {
         super(url)
     }

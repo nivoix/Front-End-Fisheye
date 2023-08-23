@@ -13,7 +13,7 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" id="contact_btn" onclick="displayModal()" title="Contact me">Contactez-moi</button>
+        <button class="contact_button" id="contact_btn" title="Contact me">Contactez-moi</button>
       </div>
       <div class="select-control">
         <label for="select">Trier par:</label>
@@ -32,7 +32,7 @@
 			<div class="modal" >
 				<header>
           <h1>Contactez-moi</h1>
-          <img src="./assets/icons/xmark-solid.svg" class="btn_close" onclick="closeModal()" title="bouton de fermeture" alt="icone de fermeture de la modal" tabindex="0">
+          <img src="./assets/icons/xmark-solid.svg" class="btn_close" id="btn_close_contact" title="bouton de fermeture" alt="icone de fermeture de la modal" tabindex="0">
         </header>
 				<form>
 					<div class="form" id="contactForm">
@@ -65,22 +65,22 @@
     <div id="mediaModal" role="dialog" aria-label="image closeup view" aria-hidden="true">
 			<button id="left-arrow" aria-label="Previous image" title="Previous image" role="link">&#x3008;</button>
 			<button id="right-arrow" aria-label="Next image" title="Next image" role="link">&#x3009;</button>
-      <img id="closeMediaModal" src="./assets/icons/xmark-solid.svg" class="btn_close" onclick="closeLightBoxModal()" alt="button_close" tabindex="0">
+      <img id="closeMediaModal" src="./assets/icons/xmark-solid.svg" class="btn_close" alt="button_close" tabindex="0">
       <div class="boxmedia"></div>
     </div>
-    <script src="./scripts/api/api.js"></script>
-    <script src="./scripts/factories/renderMediasCard.js"></script>
-    <script src="./scripts/factories/renderPhotographCard.js"></script>
-    <script src="./scripts/template/photographCard.js"></script>
-    <script src="./scripts/template/mediasCard.js"></script>
-    <script src="./scripts/template/lightBoxModal.js"></script>
-    <script src="./scripts/utils/contactForm.js"></script>
-    <script src="./scripts/utils/lightBox.js"></script>
-    <script src="./scripts/utils/counterLikes.js"></script>
-    <script src="./scripts/utils/filteredMediasCard.js"></script>
-    <script src="./scripts/utils/indeximageSelected.js"></script>
-    <script src="./scripts/utils/keyboard.js"></script>
-    <script src="./scripts/pages/photographer.js"></script>
+    <script type="module" src="./scripts/api/api.js"></script>
+    <script type="module" src="./scripts/factories/renderMediasCard.js"></script>
+    <script type="module" src="./scripts/factories/renderPhotographCard.js"></script>
+    <script type="module" src="./scripts/template/photographCard.js"></script>
+    <script type="module" src="./scripts/template/mediasCard.js"></script>
+    <script type="module" src="./scripts/template/lightBoxModal.js"></script>
+    <script type="module" src="./scripts/utils/contactForm.js"></script>
+    <script type="module" src="./scripts/utils/lightBox.js"></script>
+    <script type="module" src="./scripts/utils/counterLikes.js"></script>
+    <script type="module" src="./scripts/utils/filteredMediasCard.js"></script>
+    <script type="module" src="./scripts/utils/indeximageSelected.js"></script>
+    <script type="module" src="./scripts/utils/keyboard.js"></script>
+    <script type="module" src="./scripts/pages/photographer.js"></script>
 
   </body>
 </html>

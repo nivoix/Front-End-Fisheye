@@ -1,3 +1,5 @@
+import { PhotographerApi } from "../api/api.js";
+import { photographerCard } from "../template/photographersCard.js";
 class App {
     constructor() {
         //localisation de toutes les cartes de photographes

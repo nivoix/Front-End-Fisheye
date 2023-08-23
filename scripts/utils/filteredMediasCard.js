@@ -1,3 +1,8 @@
+import { renderMediaCard } from "../factories/renderMediasCard.js";
+import { checkIdImageSelected } from "./indeximageSelected.js";
+import { totalLikes } from "./counterLikes.js";
+import { keypressImages } from "./keyboard.js";
+import { keypressHeart } from "./keyboard.js";
 
 function filterOption(datas, e) {
     //classement par popularité
@@ -19,18 +24,17 @@ function filterOption(datas, e) {
             }
             return 0;
         });
-        
     }
 
     
     // après la sélection de l'option de tri
     ///////// il faut supprimer tous les container "articles"
-    articles = document.querySelectorAll('.cardPhotos')
+    let articles = document.querySelectorAll('.cardPhotos')
     Array.from(articles).forEach(articl => {
         articl.remove()
     });
     //////// il faut supprimer le total de like afin qu'il ne s'affiche pas en double
-    likeTotal =document.querySelector('.nbLikesTotal')
+    let likeTotal =document.querySelector('.nbLikesTotal')
     likeTotal.remove()
     /////// il faut re-render les card
     renderMediaCard(datas)
@@ -41,4 +45,5 @@ function filterOption(datas, e) {
     keypressImages()
     keypressHeart(datas)
 }
+export { filterOption }
     

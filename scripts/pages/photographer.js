@@ -1,3 +1,16 @@
+import { PhotographerApi } from "../api/api.js"
+import { openModalContactForm } from "../utils/contactForm.js"
+import { renderPhotographCard } from "../factories/renderPhotographCard.js"
+import { renderMediaCard } from "../factories/renderMediasCard.js"
+import { checkIdImageSelected } from "../utils/indeximageSelected.js"
+import { totalLikes } from "../utils/counterLikes.js"
+import { closeTheModal } from "../utils/contactForm.js"
+import { filterOption } from "../utils/filteredMediasCard.js"
+import { keypressOption } from "../utils/keyboard.js"
+import { keypressImages } from "../utils/keyboard.js"
+import { keypressHeart } from "../utils/keyboard.js"
+
+
 class App {
     constructor() {
         this.$photographSection = document.querySelector(".photograph-header")
@@ -22,6 +35,7 @@ class App {
         checkIdImageSelected()
         //gestion des likes
         totalLikes(photographMediaSelected)
+        closeTheModal()
         //gestion du tri des cards
         const selected = document.querySelector('select')
         selected.addEventListener('change', (e) => {

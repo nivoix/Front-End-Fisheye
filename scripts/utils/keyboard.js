@@ -1,3 +1,9 @@
+import { filterOption } from "./filteredMediasCard.js";
+import { displayLightBoxModal } from "./lightBox.js";
+import { like } from "./counterLikes.js";
+import { disLike } from "./counterLikes.js";
+import { changeTotalLikes } from "./counterLikes.js";
+
 // activation de la fermeture de la modal lors de la pression du bouton ENTER
 const buttonClose = document.querySelectorAll('.btn_close')
 
@@ -10,7 +16,6 @@ for(let i = 0; i < buttonClose.length; i++) {
     }    
 }
 
-
 function keypressOption(data) {
     const options = document.querySelector('select option')
     options.addEventListener('keydown', (e) => {
@@ -20,6 +25,7 @@ function keypressOption(data) {
         }
     })
 }
+export { keypressOption }
 
 function keypressImages() {
     const images =document.querySelectorAll('.cardPhotos .cardImg ')
@@ -32,6 +38,7 @@ function keypressImages() {
         })
     }
 }
+export { keypressImages }
 
 
 function keypressHeart(data) {
@@ -59,3 +66,4 @@ function keypressHeart(data) {
         })
     })
 }
+export { keypressHeart }

@@ -1,4 +1,4 @@
-class lightBoxModal {
+export class lightBoxModal {
     constructor(photos) {
         this._photos = photos
     }

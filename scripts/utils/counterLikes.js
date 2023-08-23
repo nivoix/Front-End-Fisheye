@@ -18,8 +18,8 @@ function totalLikes (data) {
     cardLikes.textContent = nblikesDataTotal
     totalLikesCard(likesdata, cardLikes)
     // gestion de la selection de l'image par le keyboard
-    
 }
+export { totalLikes }
 
 function totalLikesCard(likesdata, cardLikes) {
     //on récupère tous les coeurs vides de la page contenu dans "cardText"
@@ -30,46 +30,47 @@ function totalLikesCard(likesdata, cardLikes) {
         emptyheart.addEventListener('click', () => {
             const heartsEmpty = document.querySelectorAll('.nblikes')
             // condition si like ou dislike
-            if((heartsEmpty[indexheart].value) == (likesdata[indexheart])){
-                   like(indexheart, heartsEmpty)
-                   changeTotalLikes(cardLikes)
+            if((heartsEmpty[indexheart].value) === (likesdata[indexheart])){
+                like(indexheart, heartsEmpty)
+                changeTotalLikes(cardLikes)
                
             }else if(heartsEmpty[indexheart].value > likesdata[indexheart]){
-                    disLike(indexheart,heartsEmpty)
-                    changeTotalLikes(cardLikes)
+                disLike(indexheart,heartsEmpty)
+                changeTotalLikes(cardLikes)
             }
         })
     })
-    
 }
-    function like(indexheart, heartsEmpty) {
-        let likeValue = heartsEmpty[indexheart].value
-        // incrémentation du nombre de likes du coeur avec l'index concerné
-        let newValueHeart = likeValue+1
-        // envoi de la nouvelle valeur en affichage
-        heartsEmpty[indexheart].textContent = newValueHeart
-        heartsEmpty[indexheart].value = newValueHeart
-        // Changement du coeur vide en plein
-        const heart = document.querySelectorAll('.cardText .heart')
-        const heartselect = heart[indexheart]
-        heartselect.setAttribute('src', './assets/heart-solid.svg')
-                   
-    }
+export { totalLikesCard }
+
+function like(indexheart, heartsEmpty) {
+    let likeValue = heartsEmpty[indexheart].value
+    // incrémentation du nombre de likes du coeur avec l'index concerné
+    let newValueHeart = likeValue+1
+    // envoi de la nouvelle valeur en affichage
+    heartsEmpty[indexheart].textContent = newValueHeart
+    heartsEmpty[indexheart].value = newValueHeart
+    // Changement du coeur vide en plein
+    const heart = document.querySelectorAll('.cardText .heart')
+    const heartselect = heart[indexheart]
+    heartselect.setAttribute('src', './assets/heart-solid.svg')            
+}
+export { like }
 
 
-    function disLike(indexheart, heartsEmpty) {
-        let likeValue = heartsEmpty[indexheart].value
-        // incrémentation du nombre de likes du coeur avec l'index concerné
-        let newValueHeart = likeValue-1
-        // envoi de la nouvelle valeur en affichage
-        heartsEmpty[indexheart].textContent = newValueHeart
-        heartsEmpty[indexheart].value = newValueHeart
-        // changement du coeur plein en vide
-        const heart = document.querySelectorAll('.cardText .heart')
-        const heartselect = heart[indexheart]
-        heartselect.setAttribute('src', './assets/heart-regular.svg')
-    }
-
+function disLike(indexheart, heartsEmpty) {
+    let likeValue = heartsEmpty[indexheart].value
+    // incrémentation du nombre de likes du coeur avec l'index concerné
+    let newValueHeart = likeValue-1
+    // envoi de la nouvelle valeur en affichage
+    heartsEmpty[indexheart].textContent = newValueHeart
+    heartsEmpty[indexheart].value = newValueHeart
+    // changement du coeur plein en vide
+    const heart = document.querySelectorAll('.cardText .heart')
+    const heartselect = heart[indexheart]
+    heartselect.setAttribute('src', './assets/heart-regular.svg')
+}
+export { disLike }
 
 
 // incrémentation du total de like de la page
@@ -86,3 +87,4 @@ function changeTotalLikes(cardLikes) {
     // on affiche le nombre total de like sur la page
     return cardLikes.textContent= nbLikesTotal
 }
+export { changeTotalLikes }

@@ -1,4 +1,4 @@
-class mediasCard {
+export class mediasCard {
     constructor(photos) {
         this._photos = photos
     }

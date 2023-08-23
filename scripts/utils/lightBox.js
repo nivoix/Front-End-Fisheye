@@ -1,3 +1,7 @@
+import { PhotographerApi } from "../api/api.js";
+import { lightBoxModal } from "../template/lightBoxModal.js"
+import { pagecontent } from "./contactForm.js";
+
 // ecoute du bouton pour ouvrir la lightBox et masquer le reste de la page
 const LightBox = document.getElementById('mediaModal')
 // fonction d'ouverture de la modal des médias
@@ -8,8 +12,9 @@ function displayLightBoxModal(id) {
     pagecontent.style.visibility = "hidden"
     launchLightBox(id)
     window.scrollTo(0,180);
-    
 }
+export { displayLightBoxModal }
+
 // fonction de fermeture de la modal des médias
 function closeLightBoxModal() {
     LightBox.style.display = "none";
@@ -17,8 +22,9 @@ function closeLightBoxModal() {
     pagecontent.style.visibility = "visible"
     pagecontent.setAttribute("aria-hidden", false)
     location.reload()
-
 }
+export { closeLightBoxModal }
+
 //Le parametre "code" vient de l'index de la photo selectionnée
 async function launchLightBox(id) {
     const photosSectionLightBox = document.querySelector('.boxmedia')

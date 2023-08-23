@@ -1,3 +1,5 @@
+import { photographCard } from "../template/photographCard.js"
+
 const photographSection = document.querySelector(".photograph-header")
 
 function renderPhotographCard(photographeSelected) {
@@ -6,3 +8,4 @@ function renderPhotographCard(photographeSelected) {
         photographSection.appendChild(Template.createPhotographCard())
     })
 }
+export { renderPhotographCard }

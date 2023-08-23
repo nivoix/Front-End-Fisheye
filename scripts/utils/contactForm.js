@@ -1,5 +1,8 @@
+import { closeLightBoxModal } from "./lightBox.js";
+
 const modal = document.getElementById("contact_modal");
 const pagecontent = document.querySelector("main")
+export { pagecontent }
 
 //fonction d'ouverture de la modal de contact
 async function displayModal() {
@@ -7,8 +10,8 @@ async function displayModal() {
     modal.setAttribute("aria-hidden", false)
     pagecontent.setAttribute("aria-hidden", true)
     pagecontent.style.visibility = "hidden"
-    
 }
+export { displayModal }
 // fonction de fermeture de la modal de contact
 function closeModal() {
     const theArtisteName = document.getElementById('theArtisteName')
@@ -18,6 +21,20 @@ function closeModal() {
     pagecontent.setAttribute("aria-hidden", false)
     theArtisteName.remove()
 }
+export { closeModal }
+
+function closeTheModal() {
+    const buttonClose = document.querySelectorAll('.btn_close')
+    buttonClose.forEach((button) => {
+        button.addEventListener('click', (e) =>{
+            if(e.target.id === "btn_close_contact") {
+                closeModal()
+            }else closeLightBoxModal()
+        })
+    })
+}
+export { closeTheModal }
+
 function openModalContactForm(photographeSelected) {
     const openModal = document.querySelector(".photograph-header button")
     const title = document.querySelector('.modal header h1')
@@ -26,6 +43,7 @@ function openModalContactForm(photographeSelected) {
         title.insertAdjacentHTML('beforeend',`<div id="theArtisteName">${photographeSelected[0].name}</div>`)
     })
 }
+export { openModalContactForm }
 
 
 // fonction de récupération de la saisie lors de la soumission du formulaire
