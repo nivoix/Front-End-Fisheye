@@ -1,19 +1,28 @@
-class Api {
+let medias
+let photographers
+export class Api {
     constructor(url) {
         this._url = url
     }
-    async get() {
-        return fetch(this._url)
+    async getMedias() {
+        
+        await fetch(this._url)
             .then(res => res.json())
-            .then(res => res)
+            .then((res) => {
+                medias = res.media;
+            })
             .catch(err => console.log('une erreur est survenue', err))
+        return medias
     }
-}
-export class PhotographerApi extends Api {
-    constructor(url) {
-        super(url)
-    }
+
     async getPhotographers() {
-        return await this.get()
+        
+        await fetch(this._url)
+            .then(res => res.json())
+            .then((res) => {
+                photographers = res.photographers;
+            })
+            .catch(err => console.log('une erreur est survenue', err))
+        return photographers
     }
 }

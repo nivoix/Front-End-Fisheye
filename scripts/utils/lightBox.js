@@ -1,4 +1,4 @@
-import { PhotographerApi } from "../api/api.js";
+import { Api } from "../api/api.js";
 import { lightBoxModal } from "../template/lightBoxModal.js"
 import { pagecontent } from "./contactForm.js";
 
@@ -31,10 +31,9 @@ async function launchLightBox(id) {
     //recupération des données
     let params = new URL(document.location).searchParams
     let photographerId = params.get("id")
-    let datasurl = new PhotographerApi(`./data/photographers.json`)
-    const data = await datasurl.get()
+    let datasurl = new Api(`./data/photographers.json`)
     //recupération des données spécifiques aux médias
-    const mediadata = data.media
+    const mediadata = await datasurl.getMedias()
     //recherche des photos du photographe sélectionné
     let allDataOnePhotograph = mediadata.filter((photograph) => photograph.photographerId == photographerId)
     //affichage de toutes les images

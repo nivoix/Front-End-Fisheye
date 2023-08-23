@@ -1,19 +1,17 @@
-import { PhotographerApi } from "../api/api.js";
 import { photographerCard } from "../template/photographersCard.js";
+import { Api } from "../api/api.js";
 class App {
     constructor() {
         //localisation de toutes les cartes de photographes
         this.$photographersSection = document.querySelector(".photographer_section");
         //instanciation de l'API avec l'URL en paramètre
-        this.photographersApi = new PhotographerApi(`./data/photographers.json`)
+        this.photographersApi = new Api(`./data/photographers.json`)
     }
     async main() {
-        //récupération des données provenant de la fetch
-        const photographersData = await this.photographersApi.get()
         //sélection des données spécifiques aux photographes
-        const photographersDataAll = photographersData.photographers;
+        const photographersData = await this.photographersApi.getPhotographers()
         // pour chaque photographe: création de sa propre carte descriptive 
-        photographersDataAll.forEach(photographe => {
+        photographersData.forEach(photographe => {
             const Template = new photographerCard(photographe)
             this.$photographersSection.appendChild(Template.createPhotographeCard())
         })
