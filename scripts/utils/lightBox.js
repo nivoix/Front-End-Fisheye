@@ -1,8 +1,8 @@
 /* eslint-disable */
 
 import { Api } from "../api/api.js";
-import { lightBoxModal } from "../template/lightBoxModal.js"
 import { pagecontent } from "./contactForm.js";
+import { renderLightBox } from "../factories/renderLightBox.js";
 
 // ecoute du bouton pour ouvrir la lightBox et masquer le reste de la page
 const LightBox = document.getElementById('mediaModal')
@@ -29,8 +29,7 @@ export { closeLightBoxModal }
 
 //Le parametre "code" vient de l'index de la photo selectionnée
 async function launchLightBox(id) {
-    const photosSectionLightBox = document.querySelector('.boxmedia')
-    //recupération des données
+   //recupération des données
     let params = new URL(document.location).searchParams
     let photographerId = params.get("id")
     let datasurl = new Api(`./data/photographers.json`)
@@ -39,10 +38,8 @@ async function launchLightBox(id) {
     //recherche des photos du photographe sélectionné
     let allDataOnePhotograph = mediadata.filter((photograph) => photograph.photographerId == photographerId)
     //affichage de toutes les images
-    allDataOnePhotograph.forEach((media, count) => {
-        const Template = new lightBoxModal(media)
-        photosSectionLightBox.appendChild(Template.createLightBoxModal(count))
-    })
+    renderLightBox(allDataOnePhotograph)
+    
     //recherche de la photo et de son titre selectionnée pour l'affichée en première
     let imgselectAll = document.querySelectorAll(`.boxmedia article`)
     let imgselect = Array.from(imgselectAll).find((img) =>img.id === id)

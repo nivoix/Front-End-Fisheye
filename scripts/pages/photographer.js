@@ -30,7 +30,7 @@ class App {
         renderMediaCard(photographMediaSelected)
         // ouverture de la modal de contact        
         openModalContactForm(photographeSelected)
-        //récupération de l'index de l'image cliquée pour ouvrir la lightBox
+        //récupération de l'index de l'image cliquée pour OUVRIR LA LIGHTBOX
         checkIdImageSelected()
         //gestion des likes
         totalLikes(photographMediaSelected)
