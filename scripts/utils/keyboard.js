@@ -1,7 +1,7 @@
-import { filterOption } from "./filteredMediasCard.js";
-import { displayLightBoxModal, closeLightBoxModal } from "./lightBox.js";
-import { like, disLike, changeTotalLikes } from "./counterLikes.js";
-import { closeModal } from "./contactForm.js";
+import { filterOption } from "./filteredMediasCard.js"
+import { displayLightBoxModal, closeLightBoxModal } from "./lightBox.js"
+import { like, disLike, changeTotalLikes } from "./counterLikes.js"
+import { closeModal } from "./contactForm.js"
 
 // activation de la fermeture de la modal lors de la pression du bouton ENTER
 const buttonClose = document.querySelectorAll('.btn_close')
@@ -30,7 +30,7 @@ function keypressImages() {
         images[a].addEventListener('keydown', (e) => {
             if(e.keyCode === 13) {
                 console.log(images[a].id)
-                displayLightBoxModal(images[a].id);
+                displayLightBoxModal(images[a].id)
             }
         })
     }

@@ -19,7 +19,7 @@ export class Api {
         await fetch(this._url)
             .then(res => res.json())
             .then((res) => {
-                photographers = res.photographers;
+                photographers = res.photographers
             })
             .catch(err => console.log('une erreur est survenue', err))
         return photographers

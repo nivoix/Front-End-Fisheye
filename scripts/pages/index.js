@@ -1,5 +1,5 @@
-import { Api } from "../api/api.js";
-import { renderPhotographInfoCard } from "../factories/renderPhotographInfoCard.js";
+import { Api } from "../api/api.js"
+import { renderPhotographInfoCard } from "../factories/renderPhotographInfoCard.js"
 class App {
     constructor() {
         //instanciation de l'API avec l'URL en paramètre

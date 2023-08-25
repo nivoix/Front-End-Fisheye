@@ -4,7 +4,7 @@ function mediasCard (photos) {
    
     function createMediasCard() {       
         //création de la card
-        const cardPhotos = document.createElement('article');
+        const cardPhotos = document.createElement('article')
         cardPhotos.className = "cardPhotos"
         //création de la carte de l'image du média
         const cardImg = document.createElement('div')
@@ -15,26 +15,27 @@ function mediasCard (photos) {
         mediaElement.src = `./assets/images/${photographerId}/${video || image}`
         mediaElement.alt = video ? describVideo : title
         mediaElement.setAttribute('role','link')        
-        mediaElement.setAttribute('aria-labelledby','closeup view')
+        mediaElement.type = video ? 'video' : 'image'        
+        mediaElement.setAttribute('aria-labelledby','open lightBox')
         mediaElement.setAttribute("tabindex", "0")
+        mediaElement.className = "photo"
         //création du titre de l'image
         const cardText = document.createElement('div')
         cardText.className = "cardText"
         const titlephoto = document.createElement('p');
-        titlephoto.textContent = `${title}`;
-        titlephoto.setAttribute("role", "titre de la photo")
+        titlephoto.textContent = `${title}`
+        titlephoto.setAttribute("role", "banner")
         // création du nb de likes de la photo
         const nblikes = document.createElement('span')
         nblikes.className = "nblikes"
         nblikes.value = parseInt(`${likes}`)
-        nblikes.textContent = `${likes}`;
+        nblikes.textContent = `${likes}`
         //création des coeurs
         const heart = document.createElement('img')
         heart.className = "heart"
         heart.setAttribute("src","./assets/heart-regular.svg") 
-        heart.setAttribute('alt','likes')
+        heart.setAttribute('alt','heart')
         heart.setAttribute("tabindex", "0")
-        heart.setAttribute("id", "heart")
 
         cardPhotos.appendChild(cardImg)
         cardPhotos.appendChild(cardText)
@@ -45,7 +46,7 @@ function mediasCard (photos) {
         cardText.appendChild(nblikes)
         cardText.appendChild(heart)
 
-        return cardPhotos;
+        return cardPhotos
     }
     return { photos, createMediasCard}
 }

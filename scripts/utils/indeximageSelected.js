@@ -5,7 +5,7 @@ function checkIdImageSelected() {
     Array.from(images).forEach((image) => {
         image.addEventListener('click', () => {
             let id = image.id
-            displayLightBoxModal(id);
+            displayLightBoxModal(id)
         })
     })
 }

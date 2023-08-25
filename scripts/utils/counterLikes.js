@@ -1,6 +1,4 @@
-
-// gestion du total de like 
-//du photographe venant de la DB 
+// gestion du total de like du photographe venant de la DB 
 //et de chaque photo
 function totalLikes (data) {
     const displayTotalLike = document.querySelector('h5')
@@ -8,7 +6,7 @@ function totalLikes (data) {
     cardLikes.className = "nbLikesTotal"
     displayTotalLike.appendChild(cardLikes)
     let likesdata = []
-    //on récupère les likes de chaque image pour les mettre dans un tableau--> likes venant de la *******   DB   **********
+    //on récupère les likes de chaque image pour les mettre dans un tableau--> likes venant de la **  DB ****
     for(let i = 0 ; i < data.length; i++) {
         likesdata.push(data[i].likes)
     }
