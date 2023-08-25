@@ -39,7 +39,6 @@ function photographerCard (photographe){
         article.appendChild(h3)
         article.appendChild(tag)
         article.appendChild(rate)
-
         return article
     }
     return { photographe, createPhotographeCard }

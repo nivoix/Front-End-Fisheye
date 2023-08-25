@@ -1,7 +1,5 @@
 function photographCard (photograph) {
-
     const { name, country ,portrait, city, tagline, price} = photograph
-    
     const picture = `./assets/images/${portrait}`
     const main = document.querySelector("main")
     const photographHeader = document.querySelector(".photograph-header")
@@ -43,7 +41,6 @@ function photographCard (photograph) {
         photographHeader.appendChild(img)
         main.appendChild(rate)
         rate.appendChild(heart)
-
         return article
     }
 

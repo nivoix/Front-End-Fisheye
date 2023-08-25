@@ -15,7 +15,7 @@ header {
     justify-content: flex-start;
     height: 90px;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 87px;
     margin-top: 50px;
 }
 header img{
@@ -68,7 +68,7 @@ main h5 .heart{
     display: flex;
     align-items: center;
     gap: 2vw;
-    margin-left: 15px;
+    margin-left: 7px;
 }
 
 /* ************************fin total likes page et tarif************************************* */
@@ -127,26 +127,26 @@ main h5 .heart{
 .select-control {
     display: flex;
     position: absolute;
-    top: 17vw;
-    width: 30%;
+    top: 270px;
+    width: 45%;
     align-items: center;
-    left: 100px;
+    left: 12vh;
     gap: 32px;
     justify-content: space-between;
 }
 label {
-    font-size: 2.6vw;
+    font-size: 16px;
 }
 
 #select {
-    width: 15vw;
-    height: 5vw;
+    width: 148px;
+    height: 48px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    font-size: 2.6vw;
+    font-size: 18px;
 }
 #select:hover, #select:focus {
     transform: scale(1.04);
@@ -164,8 +164,9 @@ select option{
     margin-top: 100px;
     position: absolute;
     right: 100px;
-    left: 100px;
-    top: 20.8vw
+    left: 7vw;
+    top: 42vh;
+    width: 84%;
 }
 .photosSection article {
     width: 100%;
@@ -182,12 +183,14 @@ select option{
 }
 .cardImg:hover, .cardImg:focus {
     transform: scale(1.05);
-    
+    border: 12px solid #D3573C;
+    border-radius: 8%;
 }
 .photo {
     object-fit: cover;
     width: 100%;
     height: 22vw;
+    border-radius: 4%;
 }
 
 .cardText {
@@ -422,3 +425,92 @@ article.active{
 }
 
 /************************MODAL MEDIA LIGHTBOX END  ******************************************/
+
+@media (max-width: 768px) {
+    .photograph-header {
+        margin-inline: 33px;
+    }
+    .photograph-header img:nth-child(2) {
+        width: 100px;
+        height: 100px;   
+    }
+    .contact_button  {
+        height: 35px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    .photograph-header h1 {
+        font-size: 24px;
+    }
+    .photograph-header h3 {
+        font-size: 22px;
+        margin: 5px 0 5px 0;
+    }
+    .photograph-header h4 {
+        font-size: 14px;
+    }
+    .select-control {
+        top: 140px;
+        left: 10vh;
+        width: 60%;
+    }
+    .photosSection{
+        top: 20vh;
+        grid-template-columns: 1fr 1fr;
+    }
+    .photosSection article {
+        width: 80%;
+    }
+    .cardText p, .cardText span, .cardTextLightBox {
+        font-size: 16px;
+    }
+    .heart {
+        width: 4.9vw;
+    }
+    main h5 {
+        width: 32vw;
+    }
+    main h5 .heart {
+        margin-right: 24px;
+        width: 3vw;
+    }
+}
+@media (max-width: 520px) {
+    body {
+        height: 96rem;
+    }
+    .photograph-header {
+        height: 250px;
+        flex-direction: column-reverse;
+    }
+    .contact_button {
+        width: 115px;
+    }
+    .select-control {
+        top: 285px;
+        width: 80%;
+    }
+    .photosSection {
+        top: 46vh;
+    }
+    
+}
+@media (max-width: 375px) {
+    body {
+        height: 90rem;
+    }
+    header {
+        justify-content: center;
+        margin-left: 0;
+    }
+    .photograph-header img:nth-child(2) {
+        width: 80px;
+        height: 80px;
+    }
+    .contact_button  {
+        width: 109px;
+        height: 40px;
+    }
+}

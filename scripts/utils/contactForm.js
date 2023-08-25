@@ -51,7 +51,6 @@ const sendModal = document.querySelector("form button")
 sendModal.addEventListener('click', (e) => {
     e.preventDefault()
     validateForm()
-
 })
 // fonction de verification du formulaire
 function validateForm () {
@@ -108,7 +107,6 @@ function validateForm () {
         infosaisie.style.color="white"
         infosaisie.style.backgroundColor = "red"
         infosaisie.style.width = "fit-content"
-
     }
     // fonction de validation complète du formulaire et récupération des données saisies
     function controlForm () {
@@ -126,11 +124,9 @@ function validateForm () {
             });
         }
     }
-
     checkInput(regexprenom, prenom, "prenom", msgprenom, msgvalidate, inputprenom)
     checkInput(regexnom, nom, "nom", msgnom, msgvalidate, inputnom)
     checkInput(regexemail, email, "email", msgemail, msgvalidate, inputemail)
     checkInput(regexmessage, message, "message", msgmessage, msgvalidate, inputmessage)
     controlForm()
-
 }

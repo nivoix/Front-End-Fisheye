@@ -4,7 +4,6 @@ class App {
     constructor() {
         //instanciation de l'API avec l'URL en paramètre
         this.photographersApi = new Api(`./data/photographers.json`)
-        
     }
     async main() {
         //sélection des données spécifiques aux photographes

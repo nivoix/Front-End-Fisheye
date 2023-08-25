@@ -45,10 +45,9 @@ function mediasCard (photos) {
         cardText.appendChild(titlephoto)
         cardText.appendChild(nblikes)
         cardText.appendChild(heart)
-
         return cardPhotos
     }
-    return { photos, createMediasCard}
+    return { photos, createMediasCard }
 }
-export { mediasCard}
+export { mediasCard }
 

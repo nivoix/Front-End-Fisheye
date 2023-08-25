@@ -1,6 +1,5 @@
 import { lightBoxModal } from "../template/lightBoxModal.js"
 
-
 const photosSectionLightBox = document.querySelector('.boxmedia')
 
 function renderLightBox (allDataOnePhotograph) {

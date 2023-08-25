@@ -31,7 +31,6 @@ function totalLikesCard(likesdata, cardLikes) {
             if((heartsEmpty[indexheart].value) === (likesdata[indexheart])){
                 like(indexheart, heartsEmpty)
                 changeTotalLikes(cardLikes)
-               
             }else if(heartsEmpty[indexheart].value > likesdata[indexheart]){
                 disLike(indexheart,heartsEmpty)
                 changeTotalLikes(cardLikes)
@@ -55,7 +54,6 @@ function like(indexheart, heartsEmpty) {
 }
 export { like }
 
-
 function disLike(indexheart, heartsEmpty) {
     let likeValue = heartsEmpty[indexheart].value
     // incrémentation du nombre de likes du coeur avec l'index concerné
@@ -69,7 +67,6 @@ function disLike(indexheart, heartsEmpty) {
     heartselect.setAttribute('src', './assets/heart-regular.svg')
 }
 export { disLike }
-
 
 // incrémentation du total de like de la page
 function changeTotalLikes(cardLikes) {

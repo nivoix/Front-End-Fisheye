@@ -37,7 +37,6 @@ function keypressImages() {
 }
 export { keypressImages }
 
-
 function keypressHeart(data) {
     let cardLikes = document.querySelector('h5 span')
     let likesdata = []
@@ -54,7 +53,6 @@ function keypressHeart(data) {
                 if((heartsEmpty[indexheart].value) === (likesdata[indexheart])){
                     like(indexheart, heartsEmpty)
                     changeTotalLikes(cardLikes)
-                    
                 }else if(heartsEmpty[indexheart].value > likesdata[indexheart]){
                     disLike(indexheart,heartsEmpty)
                     changeTotalLikes(cardLikes)

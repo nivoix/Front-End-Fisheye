@@ -39,7 +39,6 @@ function lightBoxModal (photos) {
         cardPhoto.appendChild(cardImg)
         cardPhoto.appendChild(cardText)
         cardText.appendChild(titlephoto)
-
         return cardPhoto
     }
     return { photos, createLightBoxModal }

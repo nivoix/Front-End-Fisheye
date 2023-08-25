@@ -1,4 +1,7 @@
 /* eslint-disable */
+//L23 : photographData.filter((photographer) => photographer.id == photographerId)
+// utilisation d'une égalité double et non une tripple 
+// car les données ne sont pas du même type
 
 import { Api } from "../api/api.js"
 import { openModalContactForm, closeTheModal } from "../utils/contactForm.js"

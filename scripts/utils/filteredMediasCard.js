@@ -5,7 +5,6 @@ import { keypressImages, keypressHeart } from "./keyboard.js"
 
 const selected = document.querySelector('select')
 
-
 async function filterOption(datas) {
     selected.addEventListener('change', (e) => {
         //classement par popularité

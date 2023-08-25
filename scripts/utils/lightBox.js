@@ -1,4 +1,6 @@
 /* eslint-disable */
+//L39: mediadata.filter((photograph) => photograph.photographerId == photographerId)
+//j'ai noté une double égalité au lieu d'une tripple égalité car les deux données ne sont pas du même type
 
 import { Api } from "../api/api.js"
 import { pagecontent } from "./contactForm.js"
@@ -44,7 +46,6 @@ async function launchLightBox(id) {
     let imgselectAll = document.querySelectorAll(`.boxmedia article`)
     let imgselect = Array.from(imgselectAll).find((img) =>img.id === id)
     let imgselectindex = Array.from(imgselectAll).findIndex((img) =>img.id === id)
-
     imgselect.classList.add('active')
     
     //implémentation des boutons next et previous///////////////////////////////////////////////
@@ -75,7 +76,7 @@ async function launchLightBox(id) {
         images[count].classList.add('active')
     }
     suivant.addEventListener('click', next)
-    // boutons clavier//////////////////:
+    ////////////// boutons clavier//////////////////:
     function keyPress(e) {
         console.log(e);
         if(e.keyCode === 37) {
