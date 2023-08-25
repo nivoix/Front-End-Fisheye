@@ -127,26 +127,26 @@ main h5 .heart{
 .select-control {
     display: flex;
     position: absolute;
-    top: 270px;
+    top: 19vw;
     width: 45%;
     align-items: center;
-    left: 12vh;
+    left: 7vw;
     gap: 32px;
     justify-content: space-between;
 }
 label {
-    font-size: 16px;
+    font-size: 1.6vw;
 }
 
 #select {
-    width: 148px;
-    height: 48px;
+    width: 13vw;
+    height: 5vw;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    font-size: 18px;
+    font-size: 1.6vw;
 }
 #select:hover, #select:focus {
     transform: scale(1.04);
@@ -165,7 +165,7 @@ select option{
     position: absolute;
     right: 100px;
     left: 7vw;
-    top: 42vh;
+    top: 31vw;
     width: 84%;
 }
 .photosSection article {
@@ -457,7 +457,7 @@ article.active{
         width: 60%;
     }
     .photosSection{
-        top: 20vh;
+        top: 25vw;
         grid-template-columns: 1fr 1fr;
     }
     .photosSection article {
@@ -493,7 +493,7 @@ article.active{
         width: 80%;
     }
     .photosSection {
-        top: 46vh;
+        top: 104vw;
     }
     
 }
